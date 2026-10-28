@@ -10,6 +10,23 @@
 </style>
 </head>
 <body>
+<script>
+// URL singkat untuk membuka generator: /nb/?buat
+(async function(){
+  if (!new URLSearchParams(window.location.search).has('buat')) return;
+  try {
+    const response = await fetch(new URL('buat-undangan.html', window.location.href), {cache: 'no-store'});
+    if (!response.ok) throw new Error('Halaman pembuat tautan tidak ditemukan.');
+    const html = await response.text();
+    document.open();
+    document.write(html);
+    document.close();
+  } catch (err) {
+    document.documentElement.style.visibility = 'visible';
+    document.body.innerHTML = '<main style="max-width:560px;margin:10vh auto;padding:24px;font:16px Arial,sans-serif;line-height:1.6"><h2>Menu input nama belum bisa dibuka</h2><p>Pastikan file <b>buat-undangan.html</b> berada satu folder dengan index.html di GitHub, lalu coba muat ulang.</p><p><a href="./buat-undangan.html">Buka halaman input nama secara langsung</a></p></main>';
+  }
+})();
+</script>
 <div class="cover" id="cover"><svg class="mountain" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="back" d="M0 500 170 260 300 410 500 150 760 470 900 290 1200 520V900H0Z"/><path d="M0 600 220 390 360 530 620 260 820 520 1000 360 1200 570V900H0Z"/><path d="M0 710 180 560 330 660 540 480 760 680 960 500 1200 690V900H0Z"/></svg><div class="cover-content"><div class="eyebrow">Undangan Pernikahan</div><h1>Puncak<br>Cerita Kita</h1><div class="ornament">✦ ❧ ✦</div><p>Merayakan cinta di antara langit dan bumi</p><div class="names">Bayu &amp; Nilla</div><div class="guest-to">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="personalGuestName">Tamu Undangan</strong></div><button class="btn light" id="openInvite">Buka Undangan ↗</button></div></div>
 <button class="floating-music" id="musicBtn" aria-label="Putar atau jeda musik">♫</button><audio id="bgMusic" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
 <main id="pages">
