@@ -1,118 +1,459 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#24382f">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#24382f">
 <title>Undangan Pernikahan — Puncak Cerita Kita</title>
 <style>
-:root{--forest:#24382f;--moss:#627b65;--sage:#aab8a0;--cream:#f6f2e8;--sand:#d8c9ad;--ink:#26352d;--white:#fffdf7}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.cover{position:fixed;inset:0;z-index:20;display:grid;place-items:center;text-align:center;padding:24px;color:#fffdf7;background:linear-gradient(180deg,rgba(19,37,31,.35),rgba(19,37,31,.86)),linear-gradient(145deg,#9aab9a,#405f51 45%,#1d3029);transition:opacity .7s,visibility .7s}.cover.hidden{opacity:0;visibility:hidden;pointer-events:none}.cover h1{font-size:clamp(2.5rem,8vw,5rem);font-weight:400;line-height:1.02;margin:12px 0}.cover p{letter-spacing:.16em;text-transform:uppercase;font:11px Arial,sans-serif}.cover .names{font-size:1.15rem;margin:22px 0}.guest-to{margin:8px auto 20px;font:12px/1.6 Arial,sans-serif;letter-spacing:.04em;color:#f4f2e8}.guest-to strong{display:block;font:italic 1.2rem Georgia,serif;letter-spacing:0;margin-top:5px;overflow-wrap:anywhere}.btn{border:1px solid var(--sand);background:var(--forest);color:white;padding:12px 20px;border-radius:99px;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:var(--moss)}.btn.light{background:transparent;border-color:#ffffff9c}.mountain{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}.mountain path{fill:#172b24}.mountain .back{fill:#7f9884;opacity:.7}.cover-content{position:relative;z-index:1;max-width:620px}.eyebrow{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.25em;color:var(--moss)}.cover .eyebrow{color:#e1e9dd}.wrap{max-width:860px;margin:auto;padding:0 22px}.slide{min-height:100svh;padding:90px 0 70px;display:flex;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #d9d7c8}.slide:nth-child(even){background:#ecefe5}.content{width:100%;text-align:center;position:relative;z-index:1}.kicker{font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--moss)}h2{font-weight:400;font-size:clamp(2.2rem,6vw,4rem);line-height:1.06;margin:16px 0;color:var(--forest)}h3{font-size:1.4rem;font-weight:400;margin:10px 0}.lead{max-width:570px;margin:16px auto;line-height:1.8;font-size:1.03rem}.ornament{font-size:24px;color:var(--moss);margin:20px 0}.names{font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.4}.landscape{width:min(100%,650px);height:auto;margin:25px auto 10px;display:block}.date-pill{display:inline-block;border:1px solid #9aa993;padding:12px 20px;border-radius:100px;letter-spacing:.08em;font-size:12px;margin-top:16px}.countdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:25px auto}.countdown div{min-width:76px;background:var(--forest);color:var(--white);padding:15px 10px;border-radius:8px}.countdown strong{display:block;font-size:1.7rem;font-weight:400}.countdown span{font:9px Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#d6dfd2}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:650px;margin:30px auto}.panel{padding:25px 18px;background:#fffdf7;border:1px solid #d9dfd2;border-radius:14px}.panel p{font:13px/1.7 Arial,sans-serif}.panel h3{color:var(--forest)}.mapbox{margin:20px auto;max-width:600px;border-radius:12px;overflow:hidden;border:1px solid #c9d2c4}.mapbox iframe{width:100%;height:270px;border:0;display:block}.form{max-width:520px;margin:25px auto;text-align:left;display:grid;gap:12px}.form label{font:11px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.form input,.form select,.form textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #c6d0c2;background:#fffdf7;border-radius:8px;color:var(--ink)}.gift{max-width:440px;margin:22px auto;padding:25px;border:1px solid #c7d2c3;border-radius:14px;background:#fffdf7}.gift .account{font:20px Arial,sans-serif;letter-spacing:.08em;margin:16px}.footer-note{font-size:13px;line-height:1.8}.floating-music{position:fixed;right:16px;top:16px;z-index:8;width:44px;height:44px;border-radius:50%;border:1px solid #d5dece;background:var(--forest);color:white;box-shadow:0 4px 16px #0002}.bottom-nav{display:none}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}.line{width:60px;height:1px;background:#94a48f;margin:24px auto}.tiny{font:10px Arial,sans-serif;letter-spacing:.1em;color:#738170}
-/* Generator nama tamu dalam file index.html yang sama */
-.generator-page[hidden]{display:none!important}.generator-page{min-height:100svh;padding:28px 18px;display:grid;place-items:center;background:var(--cream);font-family:Arial,sans-serif}
-.generator-card{width:min(100%,620px);padding:clamp(22px,5vw,42px);border:1px solid #d9dfd2;border-radius:28px;background:#fffdf7;text-align:center;box-shadow:0 12px 36px #24382f0c}
-.generator-card .generator-mark{font-size:34px;color:var(--moss);margin:18px 0}
-.generator-card h1{font:clamp(2rem,7vw,3.4rem)/1.08 Georgia,serif;color:var(--forest);margin:16px 0}
+:root{
+  --forest:#24382f;
+  --moss:#627b65;
+  --sage:#aab8a0;
+  --cream:#f6f2e8;
+  --sand:#d8c9ad;
+  --ink:#26352d;
+  --white:#fffdf7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.cover{
+  position:fixed;
+  inset:0;
+  z-index:20;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:24px;
+  color:#fffdf7;
+  background:
+    linear-gradient(180deg,rgba(19,37,31,.35),rgba(19,37,31,.86)),
+    linear-gradient(145deg,#9aab9a,#405f51 45%,#1d3029);
+  transition:opacity .7s,visibility .7s;
+}
+.cover.hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.cover h1{
+  font-size:clamp(2.5rem,8vw,5rem);
+  font-weight:400;
+  line-height:1.02;
+  margin:12px 0;
+}
+.cover p{
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font:11px Arial,sans-serif;
+}
+.cover .names{font-size:1.15rem;margin:22px 0}
+.guest-to{
+  margin:8px auto 20px;
+  font:12px/1.6 Arial,sans-serif;
+  letter-spacing:.04em;
+  color:#f4f2e8;
+}
+.guest-to strong{
+  display:block;
+  font:italic 1.2rem Georgia,serif;
+  letter-spacing:0;
+  margin-top:5px;
+  overflow-wrap:anywhere;
+}
+.btn{
+  border:1px solid var(--sand);
+  background:var(--forest);
+  color:white;
+  padding:12px 20px;
+  border-radius:99px;
+  transition:transform .2s,background .2s;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  background:var(--moss);
+}
+.btn.light{background:transparent;border-color:#ffffff9c}
+.mountain{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:.55;
+  pointer-events:none;
+}
+.mountain path{fill:#172b24}
+.mountain .back{fill:#7f9884;opacity:.7}
+.cover-content{
+  position:relative;
+  z-index:1;
+  max-width:620px;
+}
+.eyebrow{
+  font:10px Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.25em;
+  color:var(--moss);
+}
+.cover .eyebrow{color:#e1e9dd}
+.wrap{max-width:860px;margin:auto;padding:0 22px}
+.slide{
+  min-height:100svh;
+  padding:90px 0 70px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid #d9d7c8;
+}
+.slide:nth-child(even){background:#ecefe5}
+.content{
+  width:100%;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.kicker{
+  font:10px Arial,sans-serif;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--moss);
+}
+h2{
+  font-weight:400;
+  font-size:clamp(2.2rem,6vw,4rem);
+  line-height:1.06;
+  margin:16px 0;
+  color:var(--forest);
+}
+h3{font-size:1.4rem;font-weight:400;margin:10px 0}
+.lead{
+  max-width:570px;
+  margin:16px auto;
+  line-height:1.8;
+  font-size:1.03rem;
+}
+.ornament{font-size:24px;color:var(--moss);margin:20px 0}
+.names{font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.4}
+.landscape{
+  width:min(100%,650px);
+  height:auto;
+  margin:25px auto 10px;
+  display:block;
+}
+.date-pill{
+  display:inline-block;
+  border:1px solid #9aa993;
+  padding:12px 20px;
+  border-radius:100px;
+  letter-spacing:.08em;
+  font-size:12px;
+  margin-top:16px;
+}
+.countdown{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:25px auto;
+}
+.countdown div{
+  min-width:76px;
+  background:var(--forest);
+  color:var(--white);
+  padding:15px 10px;
+  border-radius:8px;
+}
+.countdown strong{
+  display:block;
+  font-size:1.7rem;
+  font-weight:400;
+}
+.countdown span{
+  font:9px Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#d6dfd2;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  max-width:650px;
+  margin:30px auto;
+}
+.panel{
+  padding:25px 18px;
+  background:#fffdf7;
+  border:1px solid #d9dfd2;
+  border-radius:14px;
+}
+.panel p{font:13px/1.7 Arial,sans-serif}
+.panel p.parents{
+  font:11.5px/1.55 Arial,sans-serif;
+  margin:12px 0 16px;
+  color:#536454;
+}
+.panel p.parents .parents-label{
+  font-size:11px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#71816f;
+}
+.panel p.parents .parents-names{font-weight:500;color:var(--ink)}
+.panel h3{color:var(--forest)}
+.mapbox{
+  margin:20px auto;
+  max-width:600px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid #c9d2c4;
+}
+.mapbox iframe{
+  width:100%;
+  height:270px;
+  border:0;
+  display:block;
+}
+.form{
+  max-width:520px;
+  margin:25px auto;
+  text-align:left;
+  display:grid;
+  gap:12px;
+}
+.form label{
+  font:11px Arial,sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.form input,.form select,.form textarea{
+  display:block;
+  width:100%;
+  margin-top:6px;
+  padding:12px;
+  border:1px solid #c6d0c2;
+  background:#fffdf7;
+  border-radius:8px;
+  color:var(--ink);
+}
+.gift{
+  max-width:440px;
+  margin:22px auto;
+  padding:25px;
+  border:1px solid #c7d2c3;
+  border-radius:14px;
+  background:#fffdf7;
+}
+.gift .account{
+  font:20px Arial,sans-serif;
+  letter-spacing:.08em;
+  margin:16px;
+}
+.footer-note{font-size:13px;line-height:1.8}
+.floating-music{
+  position:fixed;
+  right:16px;
+  top:16px;
+  z-index:8;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid #d5dece;
+  background:var(--forest);
+  color:white;
+  box-shadow:0 4px 16px #0002;
+}
+.bottom-nav{display:none}
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+.line{
+  width:60px;
+  height:1px;
+  background:#94a48f;
+  margin:24px auto;
+}
+.tiny{font:10px Arial,sans-serif;letter-spacing:.1em;color:#738170}
+
+/* Generator tautan undangan */
+.generator-page[hidden]{display:none!important}
+.generator-page{
+  min-height:100svh;
+  padding:28px 18px;
+  display:grid;
+  place-items:center;
+  background:var(--cream);
+  font-family:Arial,sans-serif;
+}
+.generator-card{
+  width:min(100%,620px);
+  padding:clamp(22px,5vw,42px);
+  border:1px solid #d9dfd2;
+  border-radius:28px;
+  background:#fffdf7;
+  text-align:center;
+  box-shadow:0 12px 36px #24382f0c;
+}
+.generator-card .generator-mark{
+  font-size:34px;
+  color:var(--moss);
+  margin:18px 0;
+}
+.generator-card h1{
+  font:clamp(2rem,7vw,3.4rem)/1.08 Georgia,serif;
+  color:var(--forest);
+  margin:16px 0;
+}
 .generator-card p{font:16px/1.7 Georgia,serif}
-.generator-card label{display:block;text-align:left;font:12px Arial,sans-serif;letter-spacing:.08em;margin:22px 0 8px}
-.generator-card input{display:block;width:100%;padding:15px;border:1px solid #c6d0c2;border-radius:12px;background:#fff;color:var(--ink);font:16px Arial,sans-serif}
-.generator-preview{background:#eef0e7;border-radius:16px;padding:20px;margin:18px 0;font:clamp(18px,4vw,25px) Georgia,serif;overflow-wrap:anywhere}
+.generator-card label{
+  display:block;
+  text-align:left;
+  font:12px Arial,sans-serif;
+  letter-spacing:.08em;
+  margin:22px 0 8px;
+}
+.generator-card input{
+  display:block;
+  width:100%;
+  padding:15px;
+  border:1px solid #c6d0c2;
+  border-radius:12px;
+  background:#fff;
+  color:var(--ink);
+  font:16px Arial,sans-serif;
+}
+.generator-preview{
+  background:#eef0e7;
+  border-radius:16px;
+  padding:20px;
+  margin:18px 0;
+  font:clamp(18px,4vw,25px) Georgia,serif;
+  overflow-wrap:anywhere;
+}
 .generator-actions{display:grid;gap:10px;margin-top:18px}
 .generator-actions .btn{width:100%;font:15px Arial,sans-serif;padding:15px}
-.generator-result{display:none;text-align:left;margin-top:18px;padding:16px;background:#f2f4ed;border-radius:12px;overflow-wrap:anywhere;font:13px/1.6 Arial,sans-serif}
+.generator-result{
+  display:none;
+  text-align:left;
+  margin-top:18px;
+  padding:16px;
+  background:#f2f4ed;
+  border-radius:12px;
+  overflow-wrap:anywhere;
+  font:13px/1.6 Arial,sans-serif;
+}
 .generator-result a{color:var(--forest);word-break:break-all}
-/* Kucing B&N: animasi lembut, kedipan mata, mulut bicara, dan ekor */
-.cat-home{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:28px auto 12px;padding:8px 16px;border:0;background:transparent;color:var(--moss);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.cat-stage{position:relative;display:block;width:clamp(104px,17vw,132px);line-height:0;animation:catFloat 2.8s ease-in-out infinite;transform-origin:center bottom;filter:drop-shadow(0 4px 5px #24382f12)}
-.cat-home .cat-illustration{display:block;width:100%;height:auto;object-fit:contain}
-/* Kelopak mata muncul sebentar untuk membuat efek berkedip pada ilustrasi */
-.cat-lid{position:absolute;top:39.5%;width:13%;height:10%;border-radius:50%;background:#f7d7b8;border-bottom:2px solid #b65d55;transform:scaleY(0);transform-origin:center;animation:catBlink 4.1s infinite;pointer-events:none}
-.cat-lid.left{left:29.5%}.cat-lid.right{left:56.5%;animation-delay:.08s}
-/* Mulut kecil bergerak seperti sedang berbicara */
-.cat-speaking{position:absolute;left:47.2%;top:47.2%;width:7.5%;height:5.8%;border-radius:45% 45% 55% 55%;background:#c93648;border:1px solid #8c293d;transform-origin:center top;animation:catTalk .48s ease-in-out infinite alternate;pointer-events:none}
-.cat-tail-wiggle{position:absolute;left:12%;top:69%;width:20%;height:17%;border-left:7px solid #e88a43;border-bottom:4px solid #f5c58c;border-radius:48% 0 0 48%;transform:rotate(-25deg);transform-origin:90% 10%;animation:catTail 1s ease-in-out infinite alternate;opacity:.95;pointer-events:none}
-.cat-home:active .cat-stage{transform:scale(.94)}
-.cat-home .cat-caption{font:10px Arial,sans-serif;letter-spacing:.1em;color:var(--moss);line-height:1.5}
-@keyframes catFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
-@keyframes catTail{from{transform:rotate(-18deg)}to{transform:rotate(18deg)}}
-@keyframes catBlink{0%,43%,47%,100%{transform:scaleY(0)}45%{transform:scaleY(1)}}
-@keyframes catTalk{from{transform:scaleY(.45) scaleX(.85)}to{transform:scaleY(1.25) scaleX(1.05)}}
-@media(prefers-reduced-motion:reduce){.cat-stage,.cat-lid,.cat-speaking{animation:none}.cat-lid{display:none}.cat-speaking{transform:none}}
 
-@media(max-width:600px){.slide{min-height:100svh;padding:75px 0 112px}.wrap{padding:0 18px}.grid{gap:10px}.panel{padding:20px 12px}.mapbox iframe{height:230px}.floating-music{top:12px;right:12px;bottom:auto}.bottom-nav{position:fixed;z-index:10;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;align-items:stretch;padding:7px 7px calc(7px + env(safe-area-inset-bottom));background:#f8f5ecf5;border-top:1px solid #d6dece;backdrop-filter:blur(12px)}.bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:48px;border:1px solid transparent;background:transparent;color:#71816f;border-radius:12px;padding:5px 1px;font:9px Arial,sans-serif;white-space:nowrap}.bottom-nav button .nav-icon{font:20px/1 Arial,sans-serif}.bottom-nav button .nav-label{font-size:9px;letter-spacing:-.02em}.bottom-nav button.active{background:var(--forest);color:#fffdf7;border-color:var(--forest);box-shadow:0 3px 10px #24382f22}.bottom-nav button:focus-visible{outline:2px solid #8da58b;outline-offset:2px}.lead{font-size:.97rem}.countdown div{min-width:65px;padding:12px 7px}.countdown strong{font-size:1.45rem}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+/* Kucing B&N dengan gerakan badan lembut */
+.cat-home{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin:28px auto 12px;
+  padding:8px 16px;
+  border:0;
+  background:transparent;
+  color:var(--moss);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.cat-stage{
+  position:relative;
+  display:block;
+  width:clamp(104px,17vw,132px);
+  line-height:0;
+  animation:catFloat 2.8s ease-in-out infinite;
+  transform-origin:center bottom;
+  filter:drop-shadow(0 4px 5px #24382f12);
+}
+.cat-home .cat-illustration{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+.cat-home:active .cat-stage{transform:scale(.94)}
+.cat-home .cat-caption{
+  font:10px Arial,sans-serif;
+  letter-spacing:.1em;
+  color:var(--moss);
+  line-height:1.5;
+}
+@keyframes catFloat{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-4px) rotate(1deg)}
+}
+@media(max-width:600px){
+  .slide{min-height:100svh;padding:75px 0 112px}
+  .wrap{padding:0 18px}
+  .grid{gap:10px}
+  .panel{padding:20px 12px}
+  .mapbox iframe{height:230px}
+  .floating-music{top:12px;right:12px;bottom:auto}
+  .bottom-nav{
+    position:fixed;
+    z-index:10;
+    left:0;
+    right:0;
+    bottom:0;
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:4px;
+    align-items:stretch;
+    padding:7px 7px calc(7px + env(safe-area-inset-bottom));
+    background:#f8f5ecf5;
+    border-top:1px solid #d6dece;
+    backdrop-filter:blur(12px);
+  }
+  .bottom-nav button{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    min-width:0;
+    min-height:48px;
+    border:1px solid transparent;
+    background:transparent;
+    color:#71816f;
+    border-radius:12px;
+    padding:5px 1px;
+    font:9px Arial,sans-serif;
+    white-space:nowrap;
+  }
+  .bottom-nav button .nav-icon{font:20px/1 Arial,sans-serif}
+  .bottom-nav button .nav-label{font-size:9px;letter-spacing:-.02em}
+  .bottom-nav button.active{
+    background:var(--forest);
+    color:#fffdf7;
+    border-color:var(--forest);
+    box-shadow:0 3px 10px #24382f22;
+  }
+  .bottom-nav button:focus-visible{outline:2px solid #8da58b;outline-offset:2px}
+  .lead{font-size:.97rem}
+  .countdown div{min-width:65px;padding:12px 7px}
+  .countdown strong{font-size:1.45rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
 </style>
 </head>
-<body>
-<script>
-// Generator nama tamu tersedia di file index.html ini melalui parameter ?buat.
-</script>
-<main class="generator-page" id="generatorPage" hidden>
-  <section class="generator-card">
-    <div class="kicker">Puncak Cerita Kita</div>
-    <div class="generator-mark">⌁ ▲ ⌁</div>
-    <h1>Buat Tautan Undangan</h1>
-    <p>Tulis nama tamu, lalu buat tautan pribadi yang bisa langsung dibagikan melalui WhatsApp.</p>
-    <label for="generatorName">NAMA TAMU UNDANGAN</label>
-    <input id="generatorName" type="text" maxlength="120" value="Bapak Budi & Keluarga" placeholder="Contoh: Bapak Budi & Keluarga" autocomplete="name">
-    <div class="generator-preview"><div style="font:10px Arial,sans-serif;letter-spacing:.15em;color:#738170;margin-bottom:10px">PREVIEW SAPAAN</div><strong id="generatorPreview">Bapak Budi &amp; Keluarga</strong></div>
-    <div class="generator-actions">
-      <button type="button" class="btn" id="generateLinkBtn">Buat Tautan Undangan</button>
-      <button type="button" class="btn" id="shareWhatsAppBtn" hidden>Bagikan melalui WhatsApp ↗</button>
-      <button type="button" class="btn" id="copyInviteLinkBtn" hidden>Salin Tautan</button>
-    </div>
-    <div class="generator-result" id="generatorResult" aria-live="polite"></div>
-    <p class="footer-note" style="font:12px/1.7 Arial,sans-serif;color:#738170;margin-top:20px">Tautan akan menggunakan alamat GitHub Pages website ini. Pastikan website sudah dipublikasikan.</p>
-    <a href="./" style="display:inline-block;margin-top:8px;color:var(--forest)">← Lihat undangan</a>
-  </section>
-</main>
-<div class="cover" id="cover"><svg class="mountain" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="back" d="M0 500 170 260 300 410 500 150 760 470 900 290 1200 520V900H0Z"/><path d="M0 600 220 390 360 530 620 260 820 520 1000 360 1200 570V900H0Z"/><path d="M0 710 180 560 330 660 540 480 760 680 960 500 1200 690V900H0Z"/></svg><div class="cover-content"><div class="eyebrow">Undangan Pernikahan</div><h1>Puncak<br>Cerita Kita</h1><div class="ornament">✦ ❧ ✦</div><p>Merayakan cinta di antara langit dan bumi</p><div class="names">Bayu &amp; Nilla</div><div class="guest-to">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="personalGuestName">Tamu Undangan</strong></div><button class="btn light" id="openInvite">Buka Undangan ↗</button></div></div>
-<button class="floating-music" id="musicBtn" aria-label="Putar atau jeda musik">♫</button><audio id="bgMusic" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
-<main id="pages">
-<section class="slide" id="home"><div class="wrap content reveal"><div class="kicker">Sebuah awal yang indah</div><svg class="landscape" viewBox="0 0 700 300" role="img" aria-label="Ilustrasi pegunungan dan matahari"><circle cx="350" cy="90" r="48" fill="#d9c9a6"/><path d="M0 220 120 95 210 185 330 35 460 200 550 105 700 230V300H0Z" fill="#9eaf9b"/><path d="m275 95 55-60 58 72-27-16-23 7-25-13-19 12Z" fill="#f6f2e8"/><path d="M0 250 150 160 270 230 410 130 560 240 650 170 700 210V300H0Z" fill="#627b65"/><path d="M0 280q160-40 300 0t400-5v25H0Z" fill="#24382f"/></svg><div class="kicker">Dengan penuh rasa syukur</div><h2>Kami Mengundang<br>Anda</h2><p class="lead">Dengan memohon rahmat dan berkah Tuhan, kami mengundang <strong id="personalGuestNameBody">Bapak/Ibu/Saudara/i</strong> untuk hadir dan menjadi bagian dari hari istimewa kami.</p><div class="names">Bayu <span style="color:#879982">&amp;</span> Nilla</div><div class="date-pill">JUM'AT · 27 NOVEMBER 2026</div></div></section>
-<section class="slide" id="mempelai"><div class="wrap content reveal"><div class="kicker">Dua perjalanan, satu tujuan</div><h2>Tentang Kami</h2><div class="ornament">❧</div><div class="grid"><article class="panel"><div style="font-size:38px;color:#81977f">♧</div><h3>Septian Bayu Suseno</h3><p>Putra dari Bapak S Yoyok Sucahyo &amp; Ibu Risu Winarti</p><p>“Seperti gunung yang teguh, semoga cintaku selalu menjadi tempatmu bersandar.”</p></article><article class="panel"><div style="font-size:38px;color:#81977f">❀</div><h3>Nilla Catur Wuni</h3><p>Putri dari Bapak Sudarmadi &amp; Ibu Purnamaningsih</p><p>“Seperti fajar di puncak, semoga hadirmu selalu membawa harapan baru.”</p></article></div><p class="lead">Kami percaya setiap langkah punya waktunya sendiri. Hari ini, kami memilih melangkah bersama, menyusuri hidup dengan cinta dan doa.</p></div></section>
-<section class="slide" id="acara"><div class="wrap content reveal"><div class="kicker">Catat hari bahagia kami</div><h2>Menuju Hari Istimewa</h2><p class="lead">Dengan hangat, kami menanti kehadiran dan doa restu Anda.</p><div class="countdown" id="countdown"><div><strong>--</strong><span>Hari</span></div><div><strong>--</strong><span>Jam</span></div><div><strong>--</strong><span>Menit</span></div><div><strong>--</strong><span>Detik</span></div></div><div class="grid"><article class="panel"><div class="kicker">Akad Nikah</div><h3>07.00 WIB</h3><p>Jum'at, 27 November 2026</p></article><article class="panel"><div class="kicker">Resepsi</div><p>Jum'at, 27 November 2026</p><p>Rumah Mempelai Wanita</p></article></div><div class="line"></div><h3>Lokasi Acara</h3><p class="lead">Rumah Mempelai Wanita</p><div class="mapbox"><iframe title="Peta lokasi acara" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=112.2100%2C-7.7360%2C112.2300%2C-7.7240&amp;layer=mapnik&amp;marker=-7.730362%2C112.219994" style="width:100%;height:270px;border:0;display:block" referrerpolicy="no-referrer-when-downgrade"></iframe></div><a class="btn" href="https://maps.app.goo.gl/5YQcSnMb2VsbN1739" target="_blank" rel="noopener">Buka Google Maps ↗</a></div></section>
-<section class="slide" id="rsvp"><div class="wrap content reveal"><div class="kicker">Kehadiran dan doa</div><h2>RSVP &amp; Ucapan</h2><p class="lead">Mohon konfirmasi kehadiran dan tinggalkan doa terbaik untuk perjalanan baru kami.</p><form class="form" id="rsvpForm"><label>Nama Anda<input id="guestName" required placeholder="Nama lengkap"></label><label>Konfirmasi kehadiran<select id="attendance"><option value="Hadir">Dengan senang hati hadir</option><option value="Tidak dapat hadir">Mohon maaf, belum bisa hadir</option></select></label><label>Jumlah tamu<select id="guestCount"><option>1 orang</option><option>2 orang</option><option>3 orang</option><option>4 orang</option></select></label><label>Ucapan &amp; doa<textarea id="guestMessage" rows="3" placeholder="Tuliskan ucapan terbaik..."></textarea></label><button class="btn" type="submit">Kirim melalui WhatsApp ↗</button></form><p class="tiny">Pesan akan dibuka di WhatsApp untuk dikirim. Tidak disimpan otomatis di website.</p></div></section>
-<section class="slide" id="gift"><div class="wrap content reveal"><div class="kicker">Tanda kasih</div><h2>Amplop Digital</h2><div class="ornament">♡</div><p class="lead">Doa restu Anda adalah hadiah terindah bagi kami. Namun bila ingin berbagi tanda kasih, dapat melalui informasi berikut.</p><div class="gift"><div class="kicker">Bank BCA</div><h3>Septian Bayu Suseno</h3><div class="account" id="accountNo">1401627931</div><button class="btn" id="copyAccount">Salin Nomor Rekening</button></div><div class="gift"><div class="kicker">Bank BSI</div><h3>Nilla Catur Wuni</h3><div class="account" id="accountNoBsi">7339125435</div><button class="btn" id="copyAccountBsi">Salin Nomor Rekening</button></div><p class="footer-note">Terima kasih atas perhatian, kasih, dan doa yang diberikan.</p></div></section>
-<section class="slide" id="penutup"><div class="wrap content reveal"><svg class="landscape" viewBox="0 0 700 260" aria-hidden="true"><circle cx="350" cy="80" r="42" fill="#d9c9a6"/><path d="M0 205 145 65 255 180 365 25 500 185 600 80 700 205V260H0Z" fill="#aab8a0"/><path d="M0 230 180 145 300 220 445 115 575 215 700 150V260H0Z" fill="#405e4d"/></svg><div class="kicker">Sampai di puncak, bersama</div><h2>Terima Kasih</h2><p class="lead">Merupakan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu. Semoga kebaikan selalu menyertai langkah kita semua.</p><div class="ornament">✦ ❧ ✦</div><div class="names">Bayu &amp; Nilla</div>
-<button type="button" class="cat-home" id="catHome" aria-label="Kucing B dan N, klik untuk kembali ke halaman pertama" title="Kembali ke halaman pertama">
-<span class="cat-stage"><img class="cat-illustration" src="data:image/webp;base64,UklGRjwxAABXRUJQVlA4IDAxAAAQugCdASpeAV4BPjEYikOiIaES6R0UIAMEsrd+K2d3+Zsk+oPzf97/Yf2gbJ/lv7/+wfal3q9d+X9z1/0f8X+RnzE/4//A9kX6Z/6P5//QN+qf/I/wXXK8xH7Rftb7un/O/b33l/2b1BP6t/o//X2InoLfuL6b37x/C1/Wv+Z+6ntJf/Ps1Okv8E/Xb7APJX/W/bF6k/jH1v+Z/L//A8G797/7/od/KvwP+n/wP7nez3gr8vtQL8j/nH+X/Lv3joSrgv3I+y/7n7nvUA/w/Sr7Kf9H3Af1x/1nloeDf6p7Af8y/uH/D/z/uz/2f/s/1n+p/df3PfoX+b/9X+e+A/+cf27/lf4r24/aL+4Hs/fuYUtKkSApjpAU2HHSApjpALW5SevIoOKyaJXd1RD3EAM8hH3zxQ1rctaPJS/8p7QKrJdajN//xX3++B/2/zZmhdvgfJ7lyt5a24SpPzT9iyS7hAwCKVdzthudjiUJIA9qf6mbv1FrJlq+Er8kRUzmrwTkRXRgdvw2x1czQgyLVNysRlmq8lMavssJV+7pxgelwRiln0ux4B47RTfdOhUZzdJT9Vk94p3uNFHcFqwZvzlTYv8Q/y3l3N06tBv0ibnzl71NjOWdYDH5P5333kT1bgg8vY0ifcWwlBhxa9373ScMQq4Kyn5u2XJlpW0aXacxcXmBnDJW1HNjsx/Eb+slOdBGQlO/C2iBywOkN8EvLWjADzdY9GHVXei422cZ33XOFtEw42qCRAzmgRG+HaoanJC7VPSh8nbNFJdDBmL/krmRW3jtKX0MPLBpcOqmkKHLg55Ipyu9nzp9ePy2OP72wPzpZA/9dzqf56iYP0HD2rVyPNv0aoL4uUhIj73Xv3OUwoZrLaCwZT4mUskrMduNcV5FAdRzYfR/ZjyCgDkalGwXFVlgG/nVX8yna4E2ZZtbwTCeRQ7fHhmPII41/VQEhLptUMEJk7ZrM+ckY32uVt86oU7Tm3HufAB20MW4iEccTRsXI5CrDfucC36Ub6yokpTuFzKzhRhTK3EMCrVwSnOwbXINY5MzJn2tPbBJ3NmZXi61xtN8QeVnpHoL66CCl0sJZCik/UPAdI9ivLUldONSFVQhTGEi92AoWFsA4bs0f/8J+bGi/Vq6+7EmvXv6GUAq+wF3wFJm+ldKLirNOoxDHHZEJjf1+AXj1nfwGolWBsS+4j5xokYwFaujTnn22RsX+aE1COm6R0P3fksQ2/Gj2N6+FvSU4qeBT9J201ZXg5VjNwlXvflf3WfsP6VMA+b2Ig9XMVZannhxj8HndZHF6uipaIEZ2G6n52L2G2v++aForSx0aZeYMuVBBm9raEScauWCifNKT2qcPab0BmusNMsVVdaVIQ8cf7zIvPu8AdmfA+avOxElbxm30TS5qEgHvkjodLfcDt7o82yxWFrxyTDd7pTynAUNJjIt3ptlIw+5/7Peo3JsPCrV6x/mJjbC/VEujY+aTK5d7vkgPNEgsGTddaP4pYjF4PiQCRiW0upIcWLPLyy5ZFmpcldVchhIY/1P0/2QQCFiwOxhzfK95gt+eJfF3NCafDkQUiDFPqXj4fVKyJ9ALcy9NtpypR0KaOo4Kcxf31TZ/OVjWJ0zRxHExy9eLC4H5vgUk7n/v5+N9ULoxQgNtNcdFsYUHjbg94XeDw3Kubs7b6TJWbQAsaxj13LAuk/X271gvM/oXmaEfZcZr3TA2o42gWVqZfjiSrk+zyN/q6sPLr62EMsEC/PASyT/6McEMsXqZEMbzhDxHMn9eyzE3km7d/3A8xQl8fJ8gK7Tb2KCh5jUnExhDD7G0+qXc+xf0AOPHJtgEHRVSLRq33ULASv19SphMr9XqyxsSnykHKI4DmzpiUW638KZfNLVvTOgFnJ5PaHVVH9O7kjCEZgZDyfiL0ySATAJzXx//d6fvYYy/Ge5bSf4NuWF/b+mJixLzb1nJeV5rqeTK2gANnZADXWoVBler+t1LAUzXO7FCAAA/v44i/KGl27HPC0aypAbF1nAfaqV4IAbgJavWLY5JOtqZSwAh904fCumzWbyWwAm5Ibdu2Nz7pQVBUgVNJtQ5j06WHRSMS3q1Tt5dk/OBnZaaxOJfXO+dbx47PQ1seMwAFGY3XTYZUCVR0WE0Ky1I94PwMqnS6FZKIEbsdtXkrK6mvjEfTm+V90XOJyzep5FONpTsQ2RzPYyg11+ffQn2DYtPrA4DvQvuwCeZYO3mbJnvpac9XoBlEueB4SLycaMcferyL3eKU66IWX2wQVM7+ubzRpY18ZgpLmx49UmUW61xGZdyn7+0tTEcDprC6tSZcGv5aUK899UptuCHc0qPOlVTXZeg/cb6clq0Jbg3F8fvFFVFbC2OMfAdKURUBQjjTj6SqjCQTzNP1mIINDt1Sh+z567Pu2eO5yGfqoNxqCtB3ebek0N3CAIFR+rgmdFc2zEE9K4o7/K47gS/gqbcZZuX91QXCAlSO0j5s5gu6l3lQuAxnnn6SjVmlwhRXXrvGQfmU/SwyWWiGVViXlVwgThIff1O8G4BXLEO+Y//PKQAdM6HMkmcAqCAI9k4i0vr/eOC6xA5irzrrxBai6iSGAnn9etmxmX7Vp3zZtyGpIJQ5xXymObAeeA/rgDrjPH1sN+d99FG7qEy7fpiqMdd4p76SWN4D1H8RgZO/fcDM+hI+zUOhecodZbCGxIeLsoSx7voxhbp+y+iOLbQzfD8oxX3Tkd8/pw3DYsVlzG/60fe6PX+1pwZdKoLOF/TJKPVazRfLoSi92O/+bx++YZmG4IEE0CUoP553xx11mO6xh+sLURvF9A6EflFNPVhWrCre9IKF7iESbcwxyx58FGoLQt09E0rZaoLkrdJHrn5jKoI8s2eBScuDs+jeqL0NVkNtvxe1UjOGGoPXwIo0w/VVaMa+1wA9XWPZU6ZUqbsvZpGvt/fdiQcKS3OwXe5Yq3OIdFHyakISbYoVfLeest3q1RNA/EdU4HCFpeIy7XNqfr87lFbBZx/PyD7bXOOP9Kir6huMUDuImt4piOWqVimTwBaK0ggNcQlY+b+lVTYWobOiZvmBug+j8wV726c5EgWa8lcMYsaP948HD8GS2ccB/1jVH9F4X1HdVqoht2vUfgyeeolyAvVxWLbOcf+9mWcdH7L7xRPByM053UEWZGurg3Vq87WkiwKnBFvgoGQJiqZlyrd67oZBFVa662yQHcuA4z0904mfmNCASKEuSGppMabCWIDnvni88La2tpjNXLGipNLdONbZkoIbeerJTW4p4/+7EHf/6AAkRWKKh8D/g1HsFPkwRseHaS3m6Mfmz/NMXyDw/n7lzr6CzSKofLlSaRypA8CoO+H2wms1n1fq6p8TfjM3yKGKNd9lEdiI5SkvOowd1y3emRaqGJujAecCdzawkFueAypJzEKLGiX6eSiOagvlvuRuN3v04D4x+kSx4fi7ogy57CNtPqaa3dyC+XHrFL7ITr6ndyMkx4UgqqSEN++z3++l+MUw3ukJs855gGXSS6f3GBeVIscRf1uFhrtx96c/XHVj34IorPmtjZxg11BHoAE+P8Hw2cc7E9yrjgK50KmFTNpL2ixnb2H3oNfC+MaxST8/Nv3NcJxNOr6SlJMS6Tk5wRlOpVrcevK4kCFHy8Se/uU1C+xzQolkANg6RyuPwXKEgyas8ulmI0XJZVgYxijwNIPvsv7uJfBlO0+GKLHpK+5NXRDGtg1yrTK4sxVvg0fm3T3lEPxFcH14b9tPJjLcbLwKLxd0cw9eZSg296tiDZpoV2Ba5eNoFYjXwyY/Z+HPHtC04Q0cTxq9PYXAVdt+p8GYxZvMLTPo2qT/l+RUQrm/rm9lJ9u+67I0tuEoHRg+dzfzDL67s17lStwSYcEZE7d/Kj0oU+8tIMXdoTPSvRdVablD8rpM1y5XL9a+pELsx6ePWg3mLouNfD5dkJU4gRKOBuzEHni+AZLV3EGuntQYFapV2h/7glrFy11v4YhLAY5n/ogMH6pkfwMOpQgo2zu188rpKhOgJxxo9uGlkA8kKdzx3m6dmAI3S+udTplwV1Opij8ggMGq7zCgm2o5yTyMCEfiEEJkhG4xmLtnJl4ePSHqAgaAYf0FtdW8O2IwR1SklwJNxIot5fEICBYfXZ0PdrlMfeU3BKOoHmkbJ48+Ng+R+DkryLwkymvSjJBvVtJdN5vhoVWZhDBqUaS7MM/N7Ezwc97NRBteXm8GIuNvmVyku4ZPV71LJ5ShP5zyF4FDIizP5kkdSFwQOjsZ84wPMKW+Ep0gT2NK8p9bei4tV4R77NA04ekbwDZc/BRG8e3CvdJPpS8j9dMj30pK+I4qD6OWbpJrtTwGnsV1P4YObctmLPdImX3uVT9ZmWLidIO24lGDmqa+zD7xCj3V+j8vFv8gga3XiIB/3urCOaJXdPyfFpuU9WkU3ZN81F5g2dn/bA3UFUSZZLNvYOutcaV4STSI+pssOfvOL0P3aIb72RHGdZ7wTNJLot/zla+O1vBMZJedrnIZG74nmABwL2HB+t+Zp0Bp3Ik3YCBpCAxM9oOXv/O+jpDfFz9KVrW52wnUVMZaiq8u4I6c94MOZi0w8UHSsUGqNnoEfx/11+JsmcwUROnywEuI1fBAV7qfhdGwcToJikFqeZURLLtn9w8i+qvXVUxEpabwdtZ9GwVTWe63+ML8i/JeHqe7vmHXu2SVx7sjeyiv82aSUv1vV6GwpVJxiulofGeJNPAZUQW7LOVdEJQqFXqL30tIxC6qoRHv1v8Pox8Doz3CzuLtT37nlEEuYzUm7zXN1YEPlkJoO1ooYFR2/HndMOgTZCg4n++Mm2SVJpOUwVH1ef5eus9ZFhXYEdelMlg45HpvY0ESMX1rBQLlloftqLRujUFps29BTvCxEkWDkdUV2UzXcLx8Ra18EORHY32tF87SMfnwQMFARpe0jem8jWGq0pIz1ON37j9UVqUsew8yImgp55Az/axOX24H/K4JG7lGK/nLz4t2/b3iwWjBWVyiVW7PrCR0vB5RE9yDYyshBtbnmP1IISaAYG1Hg9SR1F2NV6PgZmR9jKnCxLsnB3axYsR1BuJLrCZQysQCMI6iD6iJ3PUei2tkaSnv4mb64EFGgWoJU14scquib6zGIl41+lK10UVtkMTF1G7sAMWtWgLv9AVdpbfRbNYu2xqp6BByG9f4mCz+HQs6WkV8PZsDo1/+nj3ljITBBL6TaAi0Lvzs3xW6OzWNFphrXh12ceAhfEIkVsDuIomROrhylyub5hRdRhZfkQFx7N4qavlgH9H8gSdpG5Mv/0FvQUXWbiTo6j1Sp8EgT2gWzdRqTQ6czIlNH2dcYu6I4s86R020dRFVwKGe+q6VzLng8WLw5u9GXUoXg57x8n6NvsUPHjd/s7IhWtBIBn6mY1gmTSlpCg6mOjOH8o/UG1qKD5o6AFScSsXxeIcDuaPsU/e/aLbOsDV7yHWqtEz3N+dSIKnddnLJ9JW1j9vViw1+px4xDJxGg84u7kRWMGDQZXn7Dd6NAA6p5J8oJfMZf8sixnBXs7/mxUDo1+4RqnreZ9EGtxVIPgl4oBRKQqLxKH/5GL/1UuW185lsS3xfasSFS6p8hNnepSBKbbZDYf4ezYfwAuUFwcNNYZoxKjuUuriC5845ycaA/aC0iqUzBCQybfmVvsk1o2cy8dAkQQThABZLcC8eArxWaVB9bOYPEht7V6iw54H6Rj6+721mIAy3EOgipuW2lIbA8Z5QPBXvSrGLy4yoA+7ZwEAt5n8pkzTvtrc/WkHnuOCTELdsic2HZFxeTcSpAUCyvd/9co2cl3VnTk6f9x3mW1VIvfLApLN0q5t/DFPVJ9qX9+5nSzYq52Ws+ImCki5x5s9ODvj9JBs2bkyECZ2d1fRFViiuZiBoGbt2Aq1D2tm/BgVsZoGBvjM+O9bBIp9gg9x8Q2f8XXyibK91J2iCsRaoXaph7Iop8Tin8ezZsCTjk884GsGUxXYfkc3I/vp2Vgd8bjZzG9seRGv0w49weawmZA2YzPBQG05uZ/AK2Y6lauI5CfkI1WJ6yrS2hSAKY/wkj5K/VdUUPF7WchV8WcL4KW+Az5BSv876Uh7iDRvU4XcwPKA+1/FPyw97jSal3Hl4v4pjHxdaxojBS2fuqy8JscMEcREZ6n3da+MP+/hb2E90GAFtZYwy22QgiJ/Db+AX9GLeOD+YJJit/4tNbz/At5AmjIozlmyTRUtYc5THroCITbMv4U73ANvzNkWu60yfndNAOkec2nwb1Cue/5Hs+f6xb5r80/jHMVRW4YbyDx9WQMRRFBHbSOqrKvpvD+sCzvJhXfgE3Cab8LLG1h16LthHgJmi6JiCVRsNRACPpHXVOIYlHmsW+jpRPfUqhf89kiaRsWHkNwx5h6oJ5qo6n3AgtUdjNSCm8Pa7mN5tBeXtJoXKbOEbpjIYcMyrj3V2wOlRf9YuAPUv7YoP4+6cKx3H4mjILSIuzm6H8GUaRZCGaJwAxdGiDmBl1swBMJpP2NucBIs6/2Mfd0at7jKhcTkhe8/2pPMSUzODmjG96EbztonfGjesG4Vl4CYw66fmL5H+CFtMrNskW6MeNWf2yTP0XCubCBbfYFeJDZkfgtNb/azurBpEuJTZNMBbeRaq+fsVzDw38x6M5VA8FzZn3n1VXT2t3Jjb4aZkHMw1nFmwt/MqqxrXM+ems3lFNgdZgfpVwB1Bx4o41syBFvMHV5vmNyq3Bk5sBi4z+7wSlQQEhIWRd0ZweqshU+3/klV3eeTTM+3Jmplglx8AYMirV9WwzMzoaSpqY0mypQFfmOltimkNHWfw7RJayVdlofMMGVlUiy+FIseW8xnE0qb5ecthrd8CBc/L8z2jGTVPgDBgxT2XsUvUDRQXYEePvxly/TWk6b+vDX8zF4a4pLzXJ9ZlBNQQoBRxfxekNRUoME2q1NdLcxaQ8IvyWhG2v0gGyr/yr6PTUJBdZ2GROKeW65j9M05/Lu3l9xcsAaLyhbFxKN8Kzd2QV2vOa2bHH5O/cwBxPWSqyHEYBP3BF39zm+KmWLoWiGCgqIV9r1xsTDY5ZFdnYCYVei4+hsJpKXtW97s8+yZBkx+33O3B92Ot0ZAQtT6+WHcb/aaJO/bOC26iAn0WLD6MrcEXliWOnpOVajMLQMTh+NE/lRbPY27wHjkKE/SSkjQJ/A3NB9+La/CJQPOZgodVuWMCuGdy0F4fjEVWU8XyuTBsQj1b5pCevJAitEFTKrQpLX8Yru1y8p0r8msrjbGFeqOPWVFxWcFkFgSjl10eP9oXEkZLhONQh8v94jCUlI0q+JJHUjWMalzMW5T4ct+iEdFEQxrvGdKzkXrTdhiZESYyTLWv9vUE+ffXX0EgvXJ0cGmYsAE7CguAp/LLzJDZChj3U3j0Oullum6MlHn8gfqSKGi3xb3SVMEWcJVh3n9J/Ua0FPmD/+6bWsUJ2WgjKpzWnLgEB0QYvAB+vAhLgyHZAl+MwsjdgKsqb8tT5AkRvguF6ZUq9w26AwHVYSUOW0fdVDoCrCoNHpriy3k+XB2jcQ49vbh7cRZLv0DeD2ZGV6x88cE+AqTB/DKvdj3huPe+LD4ys3c58KM5i1o4g/tl942rWWWNZiBhoDHY0uXWBWmpyOuELO7kVqpEtpb8zExlhUlZY89tl8ZjC8veG6xuVX7MQ9nhtebN/SGtWdgI11jCEnP3D9Y3l4TG+Vz0K0YUcNrFvh6HcfN7S8eJ7hUUTDXPW6Lpr3e3ubuTwhstf4K4DDT7FS0xUT9EX0RQtqkGJbFB/JTOfwAa2IGqDn7IMtHFbcjfOdqZyn1dehKEf+ecwYHtt81KryYMhUljC+U3mLbFgIGPRLsj4DctY/qn2t2+BILmkmxcz/ZRFba3zup5K90j1AsifoG+8nbGAVMkD/+sIdKD7pS/soS6neRc+Hu47fMd3++f1H+HJzciHC4AgFjMnahKviyDjTs2xZgFrp/FQ+ViBrImJSrJYh748NKHaU8eW5jGGdthWr5kPfyN3jEunKYEKl6AdL/u0FthWfPdSMJMTQJrQLyNxv0+mVaR9C75f+GWg0g56vgedaHUtd+M5l7hM+oy+9gqUp7rdRKQ7kBaLq4SWuABAkjENY6TvcZUsC5MKjWfq8m4RFW03uELwFmB/rlgLGciptrVuTl+No9AtgFpUTKeOylI+8TzoRn/MCcQdtJ1zCSoHoVBZmLEGZ88gB6/AFFvYWfKaKrgP9DlBNbQPShsUHdeUEPT9nvl7PKU4gpm9b1c0QZAEU0XPmrJenYA1QsV1ouuaVd1BfKUcpPg0+HsVlC9wYWQbnxxd8FVLkK+TF3fmyC74HBsAnyn9IRyc5QNhEVjrSj7gm2fEY4pnuotC1PpB5qOxI8uhVx/2vz0Os3WgD2KIf3NEKVjyRsQj8B30IGITJ8r20Lo892fhz6CvTYfCfwbGZB3zaLmhkgbDFY6q/KKBYFM1pHx6ME5/IFvBO01rVJYtrZ9XhtVNu/7ofv0RKj/2qzZBslJ+HqL2ePVatSGlAz52N/HvKdCB2FF0jj4S7zBRnU4XJ6XQGyjCX+Fb2+F7VZsqBT2Mj9/UKlAuKNatUL+T03KfW5pM9VIdwNhdk22Oo3BqmuIviIrYJrPgZ7xrzQsk1Hbekwf9/grm6BpmVLl1zT86JYT1KJ3jvYO6vl0NEGNXPy4TcU/C4Rg3Gnr8ILtVF+Hg+P4nDmce1ttMF5TCGa1bDSbP6TIuCTMLSayj73CrcQzVGXmo92YxEI8r0e1S1PvZTH1jZL2Vw9/7fy5Bizj3/MI7Q490x9+AhXl2g63hMTprOJFGcHghgBbzNXAy5sKK4vAtWvJM8Atzs8J+T/ZW+hwTeoqB9G1lrqYLcMfaEZ6io2h6vPFBKs0VP7aotK6hv0GINsbaY4mDnvyUixkOjlSc6cI5tIjeYbm9bn8KcTpsdELbyp6y6fftVwaWBXbWKfIolqIdUbV6CUACy07eoXLSEKX8bsxED0NSaK/jUcgRlInVcPa3CYtBHljOAG+2XnMR+zu8JyN8zaDTgswCgyeRugMuYR2BvWWItVU5gvXgLP6YR9gYk06X/tZ+e+/59YgebE/Hwktf/wI7SvW8th/B9sV5yWyFvwOJMYyNImerBFGrnTgSkVCtcnhLQCfUSocCVjSyEnCbB9w1F2iyFiI7CAyTcGEB+yWZQUQJo66l/8cHm3rWfXQB18N3oEEuU2t7C9ox0upt2OD5RCo2kP9eS4kZDIcDM04ySfi/hXaSLA+JVIKatqpPS48gbCNmpgKyNwcTuY5mJAiFddqqXNDTaAgdwu4iXJT5sY1OU0mHkUCQPx+Sxw2a0fyBbGdjTe1v6mbumhYZqyk6OEfpn6TrmgDcE6ocqPN0+uJkaUIzulfway77nGtJHQ1jKx25hSMskH087rzW0ij1hnzmdYzhqaotCLnAIXqSYclJD/03kF0X9pnln7mgyj2k/HlwtOAl45EtYL8Gri5sJdwFhe9kh670elj21Jp5ZBOc5IiDyh2JuoWnesUmis4rtLIUQJ5k+ee33m4zUdkxy2cwwzPcK62OTFKX9vHDOsCBKdgP7H1oK13JwHpR/Du89VPzIg3UY41viVyZpjyD3eD5tMUgmqi94o1ElT42c8HW8hFTmpNbR6yTWN/0rBHEojW8xyhRrDwDHMnvtvlyMzxGlvMG67MlyHefKMzTnnxl/HMxaiKGm/txzejVVzDspG67I0+OJzEEL+g6Dy1IuwBrdzhN7FmTyruKsivGyW4zcXcIm8ojtw53uOsiF4DhqWxIMhE5sX+MhtDmTh/ovDfKv7m/DsDHTBV8UAiImqffT239cM1WZIK8uinYRT7PN4VVR8Eio4EQ+LG7hdoel137jrwNmS/BXHZDrzrQrS+hVOSO3iv78OPMxWSwbHg3QlLJXQ9vzk9CgTYlC8INyZ9TFMXv2XPQrkrImMS4P/GiqgLM6D1yqDTHg5+3AcKN+BRx4Prtf92BvU5IrUaSwWmccCC0XLBsJrLvfsmuDY8BLDR2GUylTMKBflrOMf4yWLsBcgGN/ZYZZJFfMdW1AiQK8aHv2lackv4oEeLYERLCQHkms0rYhoF9v2xt19BWDnmwTYswgOdDakd1a9UtR63TPxaIPuQM51CLX2ESEAs6mfesHu1fkwqR5WjizfFgRGK7mXh/3NFXm+9YK37aeTEUe27lQEDCLmIT/v7Ml1M/0h2ZcB0h8QtqDqaiLGMW5GE7S7KFvj4T3qoTc3zaximW0PinDUK3ru6ezBPdtrN9FqOozmc259GUFVaKre8ER47C8kSp+NOtnmiTQMapbqMDx4vSnQ9L01QPGar8KlG+M/krxXm3x5qKbBfvjdmP44HC1VVf3Mn6cie6xOKIs+JNPattBEWp/8EKVR47XEYVZGRgcHzUe1gbHJZeVGuRNk2+m/mvWhDk9mHBSEbxhu9wSM//MRhdHVqCWoiwobCb9Ipep3XSCKvtJnwvyCGGaw5uh/4aYe05Ftaw+NZ7469nyd8c+toAy+vA8pSaqT1s82NhE1GcmU6eP7cTGmzGR/pu8GTf46SYo5sN1o/4R13huJ7VOTJZVdbjdIKfTnU6IrSkLX2BjaElxDz8V+l8LylWbk87tS/r0Lsya+PVREy5yFRuW4UKsvDtshUZnYGve9rS8qLD4gNELD8VDtptDw2Hin3cIQd4zEeS6yaPni5IXEd2Ih1SpRjhPRBYWed3S5s4BBcWdwGk+YDeCR50fk0gXn0cJlJ7yg1AjwvvwJFXpD7DLXIfmhic7eiI2/sRCXLIDWe0DB7bubJK8Uzs2OrwF1Z7tXHHfpVx0SJOhLQyPDFBcuR6TYmgkJ+hwNXAf3De8qyYZ927CZ0DA5xNhOyrZsm5NXciEZkpUV7Uy6Yd2vh3TbBaMyoNXOTQfIMGO2ep9qRUy+BN4ZwggwtxeMVVGUKWrxqlgBsKTDVKNduaeX+KncE0F7yzuTGhEGBAn7C2/yTArEivL7FiUEwR3BexEmSHD8teJhPESbLvQGz5xgC0RndrDxCPUjAV+5dmVMF/JRjhXSReNG2m6riefcRd+ff8cHmZOf9v1fkydfp+TSQ+mzSBR8US7JzQxhQ2a9yh8aHS+vDLOnz6qbpE2abjRpwNjscWz28c8C66iMmYWnMCDpQus/sJtdd0uM9ib5EoRZ+53/WJpaJgfoIxuQR+OsI//ZjRzW4m7qEfsvD/gB6UeyLJyJ2Xl2lzeBYWVPwGdPGtSwOSATI9t74uucHytywBtSKksUFuzXSjb+hPyI32QQaXOsUFbhMtZxgK7HC1TJRhFjgbJ3JcrxNHuR8Mpu7mQfRd+QWo68VPIY87czjqWsO4uLH9TVasDZCkELSf+GPjvZlD/LDpV4o0CWQknbTLitO1NWlaWigqHiWosr0MCRcnKPtrJP3fBkvO/FWrurynUjKZxFQzIqVvYEZSkOr8/z3sGrZ7zg2gM1iBioJGJEFMm/8DSg8brgC5nDi904sSqxVR0afGC0nBvMbl/aXv9ve3VkCbTQEPH8tBZfOV0Cg9R/RWAZw8+1mtREByjMwya90uB87FZC1iun0AANkavobANI5BQyghNTcLP2FlH2UfvkvuG/iId0RKGHehQ6MN1G48WeerfUhPKGM/WFiuyxnenEsxF/V/fW7kBqqsSsi+SGwF43AlzsPOZkasxQyhPnK2OaXEs7FPC5BcsiE/nDNNO+vghL6tXP5MhwHH4RJRescoQEY279nkjn6OZsS7oBCHQNGCUyswx3RU3d86w2+2IbM+nWl5u462y1qJXyfu76OoLWwJZJF2ePVkiIAOeoygUQ1sw99+NFqSLm9fGBwxE5n6G0Ty4WpQZuCwboU0qQAk/fN+VWdo3qbjSU5APRvakiz2NEcQChiI4rrfY+ERxFAp9M7DxS4L0DQQm9ubox6Vo9vmk5ctGEdomBS8bE4mx0lNHnOSEpQTQAzK+HiJUK84TGN1lwKIAmRbJa7XBtYqQqEcGmT8lEIuLWa/FFVnTfQmcRksNUO1DKJ+Mo9QcShkGP1s9ebIbQrUlCHnaw5ksR1fwZahN4j+FMuwNI1dEZz6g3DqI4SmLyyuVrSdfQ42964HnvveNXoI5rr+LUuozByqU2wiQSHqa1QBHxAB15KeYKX2feUhAlxu2mBjd37j84Ud1zf9QVD1BYcTLivA+W3nge1NysE3IqMTJulPNDBrUAz8UfanUaAHVJk6v1rwl3txuGOSniHfg9GJvNO7xDBaQJMiplLQDfFMFi4A67d6xipGnQ78cjz8+rFJRmwEUBe0aU2SsZ0QMbAox7giIUF0KlnYBvs4tnZEhVYQH3wB+f3Sf5PI6YZ4u5Lw7xtyEXRCi0pgZQ3WHznXiSS2lx+Dzs8/Fdrajk9QRReUbe1eIRtsQSsNOtggo8LvGfaC8HNzN5ITOO1KOnbyv1GTTc4LCTseLzCKx62wyCv+1XBS2eRGogspAqiG99wKVfqKnZ4bNIHA/tfDMUWK+EocbBi/JQT/zwTAc/sXrE+uJmauLjyguCnKAtfI4rpdLPO8KUlkZRDkg9nqdm+pthojH6l3jKCcF/OBCEiOx9ORpwnVsKh6x5AKdj0hYM/oO0DMkNzGljElsizSMEvrrhDdkSXBPY60LKLfnmZy9ich/t92ELOQMK0Qy5H6RH7duHv8GciBSSsiB6nlzy4A4oQyPLLmU7sn9mFRtndnDp9ORYCely409zEIt9PuE4qHGhfzYijg1pSVqs1RovGf+b6KBAXYvrZCPUJ/1+iJeZzI44WbHTSD6Nc3qWSst1eskjBb7jq1RnHpaKYKnrgnMW6N+fu8Txu7CfRWGhqtLgGZPEdPaFf4OPT1VtNm9+2ZD/STL9kuzm43Md3hZpFzfkSh7+vC1fSoR8rasmUxlqJz27EX+g148Y142RxQ4hmz+vW6NdH7zmMhJul2sLqYSIvqzEE7Oz+MGIUzelYo7HivR5qwQQipYfKCf9k0/v5tndI1f+QaiM6u3/ssiORYhmrlz5P1POV28+pPP/02JVSzY/uO/wp42Y3cS4ZAfJtVm1zv5yNNneP6devicQhxHTsj8tOxooz7RfLOOW5VKeb0ZtqGPM9s14u8EyUXSzfnbgfhCjbKP/m9Log/62uSJT1UCxb8EVa4QmqgHpCeV146MlBmrjIV5AEHVblcr/DgYAC0uCyosSSuW8nIJP6QrmQZ7o7/oj+DrbMm1RtJ8Mh5uc6HIzRD25J6g9nkcVnn3PuvDzdOWFVpXgCLbj2fYrr5ehoDrIJE4hfXjpnREyxYvKyWsYZbNM6t32Q88EF1GCv18HIgx+ihIVoTqrkQwe4Ii78WaEhgojD25HxLQ+N8aWVGpN5iSQYGga1ofTIRikn8NIINwHsDn+HCaebFGcOARssHA2Z+8Bl50KCuUpDYP7MEoC6OyM5H/laj3dIg3j2ooxA3js7iR9nJKp/wOteXD1098C1xBF4K1BTkAw03vrpOH7rFa0gLydCcbPLEW8olJIbPpxN84mJGuAIs5d326/4jFnyI55k3LWQ7xUmeUnMx3Xeiwr23kAxbvAo8q9oAV/qfdA8Had0sBzFeY/KSQb8ZLKEk5W+Z6P0I5GFNYkB0Ti2Facu1t2812i74D5wO/xJP+LpP5qKYBU8U1lXsVaQ09iYL9mqSdmd5Dpp7JxIXn1nNrEQNfD7ALnRC/syIO1AvUBHenydl/xSJNuirofvZ8rRJD6HpvrvqYb8fweCu7wvNf6qDToxL822kEE0r2E5bHtG1HTf6GuzP6w6JYN/gTbCQWULuO3EO8fGvOUfhqPzfIQLPxGDc/llpsAiXVHvNorj+amvZZvaqOu8XY8PSMhM4ODTtQjDbVAtglwBNaST2XLvz4Gg0GWcwDAB4e2okswlPri+a0DAb0MSh2yIoruZBUAdYUdxSbh+PcjRCoFeHDHytBqvJH9KSeLk/XBSzmeLNrOhoeBZu8ofzlybB41/mU8THoNZTsfOLno3BmXVRCSTD7rh+E4yY3sckOwTrkulTPpVjfJtbCozYHjjUE+Moj15QMuqLu9NhKHdZHFXtL5hwbD5E2YB0gXmLWBoYVxv/hXS+kQMEtMfQ95LdWFUnAMLc4GO00vytEer6cefd55cOwcEEuoxDqf0vQ4xji4USoDRPhW4bqo8crLLQUJ1yQw/SJCwyPMx7eK5hXdlzoLdSNT1HPxcz3q3AM8etudAep9yALcT0J22TzpOBUX4/wo6SzvGh0NXafpMAzCBA5WXwD2vhyPfKtpqeFZ4XKzXnoSi2sAWQxkXcLy/tY7GbYnhz7BensarFC8KXnkPHxcjTwkGeZM5uPJU7NujOu3w1Fkulevzq24q5XEakdVytIxcFBqUvFHbjMXLjxZW2r6qRMNbwVzXG+sXR75UnytgKoipgpITyA93LkOnzNDETM2EFhyehoEUf/uOJGl40vv0+U6mXtnVsjT2MBAysA/d7t8Cy6RUubibUs+M+DOEijl3p4UoAtsWDozWXWpKumRr5tZIXNkeEiGz/3gZdaPIiSvBi/zIwArK2+PO6rO4khqomOZCpW2zSHSLExmzHIe0+GaVy+YQw3QUm64MEyh3lF1Tc1d8q6yBMh984JnUD+gKGjLZqkErSCsDOu8LW4tePOd8gP9rm/oVgWJglB7MD3mvGS0ePRYJSy7yGpoxM5UNN+XdoiN9xKaXD9vOVKafDX+pT3XLNHUU6Swviw+I8I9/1HPfgL1dsiyZvap2FgST4wCqO0ZIBLoPSlaDlgdzlDlJ8dA5rTFakEU/oOFZm+/OKjAHtOqco4VSdTEzxpsMODAmNGXW5JiGqhR+lf+G5fATagnLz+E7Gu7Ip7GhRrXmE4aN9toGUpaYyDiA/2tvFXj/SUkLnN0dQoVqELkVuns3OLnHJk9P+dM6eHqifH4Dc+GLgJDQTRZvehRjQGe+zEs5V8In6+x29rAiwvpPWc0+Xjk0rYqHpTUg0hY12PwPkxe96IGeZEAWNot7wBgHyzZRtM5+cqTEtyIdf2KpKirhbmk8uohYUY5F8/QdamH42NRZnGt9MQuur58u+ozzmSdc7PNtxeM6KZagNtPsfdxNsYT0sYaZZL6757XQ2/H9bLmwDEFSk+In8pJeZ7GlYCeCei0Q+Gf5E2xwPXCn4AI8n3E+/ObPWRRC8KNW00x63aKBQnsjRVEEhDGSLU6T271F433nfHfaeuPzY7QNf6lhEHn9GoCJx469CIGlLTNAAzI8+pp2OKt3KEid2OE4Hgl2tRa/wLgQozldGJtrtAhbex9ScY4UEbEDb+tGo8iZCuOITj53BSvgTzhsNEF0UiPahGRJilaP2VVhCsftxSQBQICoMNvnXirIsbNtx5lqBG+jQOdeKXsf5m3z69Xr0YlNuuuLWUryRYY1uLxeR8EzpgoR0lIbGAeOQ6fOy0txZDWdfw9BOOyujo1Ywtb4gh8zMQsVz/uC6s0IlJSDX5+xoarLXcy69Q4VHyMOp58oAi0nWfACYBSiS0nGAcKt/zAbHO4f5548tnw7tjpPpUDy5E1pB5bPgkkY5XvO/7Fu9HQCq9NjcyLPdQtI1eNybyBziO1Rw+x7Bri/vfT6yvpvR0I4fpjo385+8BjfBZCXfhrZEyHV6410B3AnPhOuxN2ME0O4XC/6IOopPwzmZnq7hzSc7CpT8dIn8zX3dTGbFrbndrycZmLzhWjqF+ODqjZa6oZ9ttwAaTf1N6F+2Y+Ev0K2+qcc/Bkf5y69QnIB4+l7wwzgj8MWLHZ+VZGEdqrMF4OE3rFY7IN1OuCiuRi31odel7QR1aMNwEAfMUa6IuP7zOMC4ZqgbySRqIwzh+RwGSODT4Uwa4OS16sI/m6SMHIKC87lzmFX7u54NbwWiiB/xq711I8a45kIm5HRlWF8LYXFYZDIWs9EZ3lEjwBun0nohrdVqMz95s04ApB5sy3pU512QxMJiDgXFaGdXytiF2zxLYWRjXb4g3gScFgojdqoGRb9qNPSLjJcSmxc5/N/c7UUPy8cq9a7pcM2rokMeRmms8HMRjm4ua517bmhIA3/1pDzdoJXeYIz9jbI+aVdceGejwWSZuHedKt8J9ymihRfNBcuVetUVVKHJ6rpHBmSBq+kSAZx2ScTA2lOSokCsUEewNuYKjIBMjuJMoWYNmBglLJrmQoBuTyGzBj5VtfDTSoC9w/GoYhPKl9iU7MmaKWXsQNiwPPnrN8XWu0+jg+wOBZxlgvEdYBphQeQn5vlULzUmmMMVMI0hRVRi9EjQGa9OdOUFfg3PuYRYLUIAOeISotLsPTFZig3XIpMeOVx1eKudkyN74xAky0hHbPc8rG5sxisYc/+Snvf7awjCt9AijKworiZgVbOLfUTYi8tUWR0Yo4DmV6+3oAH3uOAVYmZZrBKtzlYkWImSXKDxp/g+JkbmDjNh25LSw3HQgxJomMl4yi0dxduXv0WCv+5y8JmcWHZP9kKiTL2BX6VD9SVhNQmO3G0iqcUReLawBvSgkrYdoHe4/sXp7C3yMtC9dzlRqr38XOLSCjKLQ/iLss6NTe0GoIwutC+emUvUDwkhw9ckRP69DzMqN9L3h4DyM9/4yfOHRm4ox1ma0rY1/F2ZpDh2RTRLtY8niXJ4TXocKeNFlVmEhIXRS856dnlvUmpXnJ8NAF6HYHO8K2VA40Cd22nPf7JRIHI2RhFuZHsJRkNMvXDYoz5qsxvD5mYme1Rh18xinyd9BGRbrw1LHCY66SMJBjljdZN1aBAAA" alt="Kucing oranye-putih memakai baju hijau bertuliskan B&N"><i class="cat-tail-wiggle" aria-hidden="true"></i><i class="cat-lid left" aria-hidden="true"></i><i class="cat-lid right" aria-hidden="true"></i><i class="cat-speaking" aria-hidden="true"></i></span><span class="cat-caption">KLIK KUCING UNTUK KEMBALI 🐾</span></button>
-<p class="tiny">Dibuat dengan cinta · 1.11.2026</p></div></section>
-</main>
-<nav class="bottom-nav" id="pageNav" aria-label="Navigasi halaman undangan"><button type="button" data-page="0" class="active" aria-label="Halaman pembuka" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Pembuka</span></button><button type="button" data-page="1" aria-label="Halaman mempelai"><span class="nav-icon" aria-hidden="true">♡</span><span class="nav-label">Mempelai</span></button><button type="button" data-page="2" aria-label="Halaman acara"><span class="nav-icon" aria-hidden="true">▦</span><span class="nav-label">Acara</span></button><button type="button" data-page="3" aria-label="Halaman RSVP"><span class="nav-icon" aria-hidden="true">✉</span><span class="nav-label">RSVP</span></button><button type="button" data-page="4" aria-label="Halaman amplop digital"><span class="nav-icon" aria-hidden="true">♧</span><span class="nav-label">Amplop</span></button><button type="button" data-page="5" aria-label="Halaman penutup"><span class="nav-icon" aria-hidden="true">✦</span><span class="nav-label">Penutup</span></button></nav>
-<script>
-const sections=[...document.querySelectorAll('.slide')];const titles=['Pembuka','Mempelai','Acara','RSVP','Amplop','Penutup'];let current=0;const pageNav=document.getElementById('pageNav');const pageButtons=[...pageNav.querySelectorAll('button[data-page]')];
-// Personalisasi nama tamu dari parameter URL ?to=Nama%20Tamu
-const inviteParams=new URLSearchParams(window.location.search);
-const inviteeName=(inviteParams.get('to')||'').replace(/[<>]/g,'').trim().slice(0,120);
-if(inviteeName){document.getElementById('personalGuestName').textContent=inviteeName;document.getElementById('personalGuestNameBody').textContent=inviteeName;document.getElementById('guestName').value=inviteeName;document.title='Undangan untuk '+inviteeName+' — Bayu & Nilla'}
-pageButtons.forEach(button=>button.addEventListener('click',()=>go(Number(button.dataset.page))));
-function go(i){current=Math.max(0,Math.min(sections.length-1,i));sections[current].scrollIntoView({behavior:'smooth',block:'start'});updateNav()};function updateNav(){pageButtons.forEach((button,i)=>{const active=i===current;button.classList.toggle('active',active);if(active){button.setAttribute('aria-current','page')}else{button.removeAttribute('aria-current')}})};updateNav();
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.querySelector('.reveal')?.classList.add('visible');current=sections.indexOf(e.target);updateNav()}}),{threshold:.45});sections.forEach(s=>observer.observe(s));
-document.getElementById('openInvite').addEventListener('click',()=>{document.getElementById('cover').classList.add('hidden');document.getElementById('home').scrollIntoView({behavior:'smooth'});const a=document.getElementById('bgMusic');a.play().then(()=>document.getElementById('musicBtn').textContent='Ⅱ').catch(()=>{})});
-const audio=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicBtn');musicBtn.addEventListener('click',()=>{if(audio.paused){audio.play().then(()=>musicBtn.textContent='Ⅱ').catch(()=>alert('Tambahkan file music.mp3 ke folder undangan terlebih dahulu.'))}else{audio.pause();musicBtn.textContent='♫'}});audio.addEventListener('ended',()=>musicBtn.textContent='♫');
-const eventDate=new Date('2026-11-27T07:00:00+07:00');function tick(){let d=Math.max(0,eventDate-Date.now());const vals=[Math.floor(d/86400000),Math.floor(d%86400000/3600000),Math.floor(d%3600000/60000),Math.floor(d%60000/1000)];document.querySelectorAll('#countdown strong').forEach((e,i)=>e.textContent=String(vals[i]).padStart(2,'0'))}tick();setInterval(tick,1000);
-document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('guestName').value.trim(),att=document.getElementById('attendance').value,num=document.getElementById('guestCount').value,msg=document.getElementById('guestMessage').value.trim();const text=`Halo, saya ${name}. Konfirmasi undangan Bayu & Nilla: ${att}. Jumlah tamu: ${num}. Ucapan: ${msg||'-'}`;const phone='6285257475475';window.open('https://wa.me/6285257475475?text='+encodeURIComponent(text),'_blank','noopener,noreferrer')});
-document.querySelectorAll('.gift').forEach(card=>{const button=card.querySelector('button');const account=card.querySelector('.account');if(!button||!account)return;button.addEventListener('click',async()=>{const value=account.textContent.trim();try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value)}else{const field=document.createElement('textarea');field.value=value;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();const ok=document.execCommand('copy');field.remove();if(!ok)throw new Error('copy failed')}button.textContent='Nomor berhasil disalin ✓';setTimeout(()=>button.textContent='Salin Nomor Rekening',2200)}catch(e){window.prompt('Salin nomor rekening berikut:',value)}})});
-// Kucing B&N kembali ke halaman pertama
- document.getElementById('catHome').addEventListener('click',()=>{document.getElementById('cover').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})});
-// Mode pembuat tautan aktif di alamat yang sama: /nb/?buat
-const generatorPage=document.getElementById('generatorPage');
-if(new URLSearchParams(location.search).has('buat')){
-  generatorPage.hidden=false;
-  document.getElementById('cover').style.display='none';
-  document.getElementById('musicBtn').style.display='none';
-  document.getElementById('pages').style.display='none';
-  document.querySelector('.bottom-nav').style.display='none';
-  document.title='Buat Tautan Undangan — Puncak Cerita Kita';
-}
-const generatorName=document.getElementById('generatorName');
-const generatorPreview=document.getElementById('generatorPreview');
-const generateLinkBtn=document.getElementById('generateLinkBtn');
-const shareWhatsAppBtn=document.getElementById('shareWhatsAppBtn');
-const copyInviteLinkBtn=document.getElementById('copyInviteLinkBtn');
-const generatorResult=document.getElementById('generatorResult');
-let generatedInviteUrl='';
-generatorName.addEventListener('input',()=>{generatorPreview.textContent=generatorName.value.trim()||'Nama Tamu Undangan';generatedInviteUrl='';shareWhatsAppBtn.hidden=true;copyInviteLinkBtn.hidden=true;generatorResult.style.display='none'});
-generateLinkBtn.addEventListener('click',()=>{const name=generatorName.value.trim();if(!name){alert('Silakan isi nama tamu terlebih dahulu.');generatorName.focus();return}generatedInviteUrl=location.origin+location.pathname+'?to='+encodeURIComponent(name);generatorResult.style.display='block';generatorResult.innerHTML='<strong>Tautan undangan berhasil dibuat:</strong><br><a id="generatedInviteAnchor" target="_blank" rel="noopener"></a>';const a=document.getElementById('generatedInviteAnchor');a.href=generatedInviteUrl;a.textContent=generatedInviteUrl;shareWhatsAppBtn.hidden=false;copyInviteLinkBtn.hidden=false});
-shareWhatsAppBtn.addEventListener('click',()=>{if(!generatedInviteUrl)return;const name=generatorName.value.trim();const msg='Yth. '+name+', dengan hormat kami mengundang Anda untuk hadir di acara pernikahan Bayu & Nilla. Silakan buka undangan pribadi berikut: '+generatedInviteUrl;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer')});
-copyInviteLinkBtn.addEventListener('click',async()=>{if(!generatedInviteUrl)return;try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(generatedInviteUrl);else{const field=document.createElement('textarea');field.value=generatedInviteUrl;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();const ok=document.execCommand('copy');field.remove();if(!ok)throw new Error('copy failed')}copyInviteLinkBtn.textContent='Tautan berhasil disalin ✓';setTimeout(()=>copyInviteLinkBtn.textContent='Salin Tautan',2200)}catch(e){window.prompt('Salin tautan undangan ini:',generatedInviteUrl)}});
-</script>
-</body></html>
