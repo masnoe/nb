@@ -45,6 +45,7 @@ h3{font-size:1.4rem;font-weight:400;margin:10px 0}
 .sky-scene .landscape{width:100%;height:auto;display:block;margin:0}
 .sky-bg{fill:url(#skyGradient);transition:fill .6s}
 .sun-core{fill:#f6d27e}
+.sun-rays{opacity:1}
 .moon-core{fill:#f7edc5}
 .moon-cut{fill:#18304d}
 .night-only{display:none}
@@ -94,7 +95,7 @@ h3{font-size:1.4rem;font-weight:400;margin:10px 0}
 .line{width:60px;height:1px;background:#94a48f;margin:24px auto}
 .tiny{font:10px Arial,sans-serif;letter-spacing:.1em;color:#738170}
 
-/* Generator nama tamu */
+/* Generator nama tamu dalam file index.html yang sama */
 .generator-page[hidden]{display:none!important}
 .generator-page{min-height:100svh;padding:28px 18px;display:grid;place-items:center;background:var(--cream);font-family:Arial,sans-serif}
 .generator-card{width:min(100%,620px);padding:clamp(22px,5vw,42px);border:1px solid #d9dfd2;border-radius:28px;background:#fffdf7;text-align:center;box-shadow:0 12px 36px #24382f0c}
@@ -109,9 +110,9 @@ h3{font-size:1.4rem;font-weight:400;margin:10px 0}
 .generator-result{display:none;text-align:left;margin-top:18px;padding:16px;background:#f2f4ed;border-radius:12px;overflow-wrap:anywhere;font:13px/1.6 Arial,sans-serif}
 .generator-result a{color:var(--forest);word-break:break-all}
 
-/* Ilustrasi kucing kecil */
-.cat-home{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:28px auto 12px;padding:8px 16px;border:0;background:transparent;color:var(--moss);cursor:pointer}
-.cat-stage{position:relative;display:block;width:clamp(104px,17vw,132px);line-height:0;animation:catFloat 2.8s ease-in-out infinite;transform-origin:center bottom}
+/* Kucing B&N: ilustrasi asli dengan gerakan badan yang lembut */
+.cat-home{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:28px auto 12px;padding:8px 16px;border:0;background:transparent;color:var(--moss);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cat-stage{position:relative;display:block;width:clamp(104px,17vw,132px);line-height:0;animation:catFloat 2.8s ease-in-out infinite;transform-origin:center bottom;filter:drop-shadow(0 4px 5px #24382f12)}
 .cat-home .cat-illustration{display:block;width:100%;height:auto;object-fit:contain}
 .cat-home:active .cat-stage{transform:scale(.94)}
 .cat-home .cat-caption{font:10px Arial,sans-serif;letter-spacing:.1em;color:var(--moss);line-height:1.5}
@@ -123,266 +124,281 @@ h3{font-size:1.4rem;font-weight:400;margin:10px 0}
 .grid{gap:10px}
 .panel{padding:20px 12px}
 .mapbox iframe{height:230px}
-.floating-music{top:12px;right:12px}
+.floating-music{top:12px;right:12px;bottom:auto}
 .bottom-nav{position:fixed;z-index:10;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;align-items:stretch;padding:7px 7px calc(7px + env(safe-area-inset-bottom));background:#f8f5ecf5;border-top:1px solid #d6dece;backdrop-filter:blur(12px)}
 .bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:48px;border:1px solid transparent;background:transparent;color:#71816f;border-radius:12px;padding:5px 1px;font:9px Arial,sans-serif;white-space:nowrap}
 .bottom-nav button .nav-icon{font:20px/1 Arial,sans-serif}
-.bottom-nav button .nav-label{font-size:9px;letter-spacing:-.02em}
-.bottom-nav button.active{background:var(--forest);color:#fffdf7;border-color:var(--forest);box-shadow:0 3px 10px #24382f22}
-.bottom-nav button:focus-visible{outline:2px solid #8da58b;outline-offset:2px}
-.lead{font-size:.97rem}
-.countdown div{min-width:65px;padding:12px 7px}
-.countdown strong{font-size:1.45rem}
+.bottom-nav button.active{background:#e6ebdf;color:var(--forest);border-color:#d1dbc9}
 }
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
-<main class="generator-page" id="generatorPage" hidden>
-<section class="generator-card">
-<div class="kicker">Puncak Cerita Kita</div>
-<div class="generator-mark">⌁ ▲ ⌁</div>
-<h1>Buat Tautan Undangan</h1>
-<p>Tulis nama tamu, lalu buat tautan pribadi yang bisa langsung dibagikan melalui WhatsApp.</p>
-<label for="generatorName">NAMA TAMU UNDANGAN</label>
-<input id="generatorName" type="text" maxlength="120" value="Bapak Budi &amp; Keluarga" placeholder="Contoh: Bapak Budi &amp; Keluarga" autocomplete="name">
-<div class="generator-preview"><div style="font:10px Arial,sans-serif;letter-spacing:.15em;color:#738170;margin-bottom:10px">PREVIEW SAPAAN</div><strong id="generatorPreview">Bapak Budi &amp; Keluarga</strong></div>
-<div class="generator-actions">
-<button type="button" class="btn" id="generateLinkBtn">Buat Tautan Undangan</button>
-<button type="button" class="btn" id="shareWhatsAppBtn" hidden>Bagikan melalui WhatsApp ↗</button>
-<button type="button" class="btn" id="copyInviteLinkBtn" hidden>Salin Tautan</button>
-</div>
-<div class="generator-result" id="generatorResult" aria-live="polite"></div>
-<p class="footer-note" style="font:12px/1.7 Arial,sans-serif;color:#738170;margin-top:20px">Tautan akan menggunakan alamat website ini. Pastikan website sudah dipublikasikan.</p>
-<a href="./" style="display:inline-block;margin-top:8px;color:var(--forest)">← Lihat undangan</a>
-</section>
-</main>
-
 <div class="cover" id="cover">
-<svg class="mountain" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<path class="back" d="M0 500 170 260 300 410 500 150 760 470 900 290 1200 520V900H0Z"/>
-<path d="M0 600 220 390 360 530 620 260 820 520 1000 360 1200 570V900H0Z"/>
-<path d="M0 710 180 560 330 660 540 480 760 680 960 500 1200 690V900H0Z"/>
+<svg class="mountain" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path class="back" d="M0 500L180 280 300 410 490 170 700 430 870 230 1080 440 1200 320V800H0Z"/>
+<path d="M0 580L170 390 300 520 510 270 720 550 900 350 1080 530 1200 440V800H0Z"/>
 </svg>
 <div class="cover-content">
-<div class="eyebrow">Undangan Pernikahan</div>
-<h1>Puncak<br>Cerita Kita</h1>
-<div class="ornament">✦ ❧ ✦</div>
-<p>Bismillahirrahmanirrahim</p>
-<div class="names">Bayu &amp; Nilla</div>
-<div class="guest-to">Assalamu’alaikum warahmatullahi wabarakatuh.<br>Kepada Yth. Bapak/Ibu/Saudara/i<strong id="personalGuestName">Tamu Undangan</strong></div>
-<button class="btn light" id="openInvite">Buka Undangan ↗</button>
+<div class="eyebrow">The Wedding of</div>
+<h1>Bayu <span style="font-style:italic">&</span> Nilla</h1>
+<div class="names">27 November 2026</div>
+<p>Dengan memohon rahmat dan ridha Allah SWT</p>
+<div class="guest-to">Kepada Yth.<strong id="personalGuestName">Tamu Undangan</strong></div>
+<button class="btn light" id="openInvite">Buka Undangan</button>
 </div>
 </div>
 
 <button class="floating-music" id="musicBtn" aria-label="Putar atau jeda musik">♫</button>
-<audio id="bgMusic" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
+<audio id="bgMusic" loop preload="none" src="music.mp3"></audio>
 
-<main id="pages">
+<div id="pages">
+
 <section class="slide" id="home">
 <div class="wrap content reveal">
-<div class="kicker">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+<div class="kicker">Assalamu’alaikum Warahmatullahi Wabarakatuh</div>
+<h2>Puncak Cerita Kita</h2>
+<p class="lead">Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami.</p>
+<div class="ornament">❧</div>
 
-<div class="sky-scene" id="skyScene" data-sky="day" role="img" aria-label="Ilustrasi pegunungan yang berubah mengikuti waktu siang dan malam">
-<svg class="landscape" viewBox="0 0 700 300" aria-hidden="true">
+<div class="sky-scene" id="skyScene" data-sky="day">
+<svg class="landscape" viewBox="0 0 650 330" role="img" aria-label="Ilustrasi pegunungan dengan suasana siang atau malam">
 <defs>
-<linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#9bc9df"/>
-<stop offset="1" stop-color="#f4e9cb"/>
-</linearGradient>
+<linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b7d2d0"/><stop offset="1" stop-color="#f1e7ca"/></linearGradient>
 </defs>
-<rect class="sky-bg" width="700" height="300" rx="18"/>
+<rect class="sky-bg" width="650" height="330"/>
 <g class="day-only">
-<circle cx="545" cy="65" r="34" class="sun-core"/>
-<g stroke="#e4b967" stroke-width="5" stroke-linecap="round">
-<path d="M545 13v-12M545 129v-12M493 65h-12M609 65h-12M508 28l-9-9M591 111l-9-9M582 28l9-9M499 111l9-9"/>
+<circle class="sun-core" cx="500" cy="76" r="29"/>
+<g class="sun-rays" stroke="#f6d27e" stroke-width="3" stroke-linecap="round">
+<path d="M500 30v-12M500 134v-12M454 76h-12M558 76h-12M467 43l-9-9M542 118l-9-9M533 43l9-9M458 118l9-9"/>
 </g>
 </g>
 <g class="night-only">
-<circle cx="545" cy="65" r="34" class="moon-core"/>
-<circle cx="558" cy="53" r="30" class="moon-cut"/>
-<g fill="#fff4c9">
-<circle cx="455" cy="42" r="3"/>
-<circle cx="610" cy="115" r="2.5"/>
-<circle cx="390" cy="78" r="2"/>
-<circle cx="650" cy="34" r="2.5"/>
-<circle cx="480" cy="130" r="2"/>
+<circle class="moon-core" cx="500" cy="76" r="27"/>
+<circle class="moon-cut" cx="513" cy="65" r="24"/>
+<g fill="#fff2c6">
+<circle cx="420" cy="52" r="2"/><circle cx="555" cy="120" r="2"/><circle cx="380" cy="95" r="1.7"/><circle cx="580" cy="45" r="1.5"/><circle cx="460" cy="135" r="1.5"/>
 </g>
 </g>
-<g class="clouds" fill="#fffdf4" opacity=".78">
-<path d="M90 105c-18 0-26-24-8-33 4-20 34-22 43-5 18-9 39 4 35 22 20 3 17 25-3 25H90Z"/>
-<path d="M260 65c-13 0-18-18-6-24 4-15 26-16 33-4 13-7 28 3 25 16 14 2 12 18-2 18h-50Z"/>
+<g class="clouds" fill="#fffdf0" opacity=".72">
+<ellipse cx="130" cy="94" rx="48" ry="13"/><ellipse cx="160" cy="88" rx="28" ry="18"/><ellipse cx="105" cy="86" rx="22" ry="15"/>
+<ellipse cx="330" cy="130" rx="40" ry="10"/><ellipse cx="350" cy="124" rx="24" ry="15"/>
 </g>
-<path d="M0 220 120 95 210 185 330 35 460 200 550 105 700 230V300H0Z" fill="#9eaf9b"/>
-<path d="m275 95 55-60 58 72-27-16-23 7-25-13-19 12Z" fill="#f6f2e8"/>
-<path d="M0 250 150 160 270 230 410 130 560 240 650 170 700 210V300H0Z" fill="#627b65"/>
-<path d="M0 280q160-40 300 0t400-5v25H0Z" fill="#24382f"/>
+<path d="M0 245L110 130 190 215 300 85 420 225 510 130 650 250V330H0Z" fill="#9aaf9b"/>
+<path d="M0 270L150 170 245 250 360 145 490 260 580 185 650 240V330H0Z" fill="#718e78"/>
+<path d="M0 290L110 220 210 280 340 195 460 285 560 220 650 275V330H0Z" fill="#466b55"/>
+<path d="M0 310Q140 270 260 300T500 290T650 300V330H0Z" fill="#294a39"/>
 </svg>
-
 <div class="sky-info">
 <span class="sky-time-icon" id="skyTimeIcon">☀</span>
 <span><strong id="skyTimeLabel">SIANG</strong><small id="skyClock">--:-- WIB</small></span>
 <i></i>
-<span class="sky-weather-icon" id="skyWeatherIcon">☀</span>
-<span><strong id="skyWeatherLabel">CUACA CERAH</strong><small>Keterangan cuaca</small></span>
+<span class="sky-weather-icon" id="skyWeatherIcon">☁</span>
+<span><strong id="skyWeatherLabel">MEMUAT CUACA</strong><small id="skyWeatherDetail">Mengambil data cuaca lokasi acara...</small></span>
 </div>
 </div>
 
-<div class="kicker">Dengan memohon rida Allah SWT</div>
-<h2>Undangan<br>Pernikahan</h2>
-<p class="lead">Assalamu’alaikum warahmatullahi wabarakatuh.<br><br>Dengan memohon rahmat dan rida Allah SWT, kami mengundang <strong id="personalGuestNameBody">Bapak/Ibu/Saudara/i</strong> untuk hadir serta mendoakan pernikahan kami.</p>
-<div class="names">Bayu <span style="color:#879982">&amp;</span> Nilla</div>
-<div class="date-pill">JUM'AT · 27 NOVEMBER 2026</div>
+<div class="ornament">❦</div>
+<div class="names">Bayu & Nilla</div>
+<div class="date-pill">JUMAT, 27 NOVEMBER 2026</div>
+<div class="line"></div>
+<p class="lead">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
 </div>
 </section>
 
 <section class="slide" id="mempelai">
 <div class="wrap content reveal">
-<div class="kicker">Bismillāhirraḥmānirraḥīm</div>
-<h2>Kedua Mempelai</h2>
-<div class="ornament">❧</div>
+<div class="kicker">Dengan memohon keberkahan Allah SWT</div>
+<h2>Mempelai</h2>
+<p class="lead">Maha suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan penuh rasa syukur, kami mempersembahkan putra-putri kami:</p>
 <div class="grid">
-<article class="panel">
-<div style="font-size:38px;color:#81977f">♧</div>
-<h3>Septian Bayu Suseno</h3>
-<p class="parents"><span class="parents-label">Putra dari</span><br><span class="parents-names">Bapak S Yoyok Sucahyo &amp; Ibu Risu Winarti</span></p>
-<p>“Semoga Allah SWT membimbing kami dalam iman dan kebaikan.”</p>
-</article>
-<article class="panel">
-<div style="font-size:38px;color:#81977f">❀</div>
-<h3>Nilla Catur Wuni</h3>
-<p class="parents"><span class="parents-label">Putri dari</span><br><span class="parents-names">Bapak Sudarmadi &amp; Ibu Purnamaningsih</span></p>
-<p>“Semoga Allah SWT menganugerahkan keluarga sakinah, mawaddah, wa rahmah.”</p>
-</article>
+<div class="panel">
+<h3>Bayu</h3>
+<div class="ornament">❧</div>
+<p>Putra dari</p>
+<p class="parents"><span class="parents-label">Bapak</span><br><span class="parents-names">Nama Ayah Mempelai Pria</span></p>
+<p class="parents"><span class="parents-label">Ibu</span><br><span class="parents-names">Nama Ibu Mempelai Pria</span></p>
 </div>
-<p class="lead">Semoga Allah SWT memberkahi rumah tangga kami menjadi keluarga sakinah, mawaddah, wa rahmah. Āmīn.</p>
+<div class="panel">
+<h3>Nilla</h3>
+<div class="ornament">❧</div>
+<p>Putri dari</p>
+<p class="parents"><span class="parents-label">Bapak</span><br><span class="parents-names">Nama Ayah Mempelai Wanita</span></p>
+<p class="parents"><span class="parents-label">Ibu</span><br><span class="parents-names">Nama Ibu Mempelai Wanita</span></p>
+</div>
+</div>
+<p class="lead">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.”</p>
+<p class="tiny">QS. AR-RUM: 21</p>
 </div>
 </section>
 
 <section class="slide" id="acara">
 <div class="wrap content reveal">
-<div class="kicker">Insyaallah</div>
-<h2>Hari Bahagia Kami</h2>
-<p class="lead">Dengan mengharap ridha dan barakah Allah SWT, kami memohon kehadiran serta doa restu Bapak/Ibu/Saudara/i.</p>
+<div class="kicker">Insya Allah akan dilaksanakan pada</div>
+<h2>Waktu & Tempat</h2>
+<div class="ornament">❧</div>
+<div class="date-pill">JUMAT, 27 NOVEMBER 2026</div>
 <div class="countdown" id="countdown">
-<div><strong>--</strong><span>Hari</span></div>
-<div><strong>--</strong><span>Jam</span></div>
-<div><strong>--</strong><span>Menit</span></div>
-<div><strong>--</strong><span>Detik</span></div>
+<div><strong>00</strong><span>Hari</span></div>
+<div><strong>00</strong><span>Jam</span></div>
+<div><strong>00</strong><span>Menit</span></div>
+<div><strong>00</strong><span>Detik</span></div>
 </div>
-<div class="event-date" style="margin:18px auto 22px;padding:12px 18px;max-width:360px;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);font-weight:600;letter-spacing:.04em">Jum'at, 27 November 2026</div>
 <div class="grid">
-<article class="panel"><div class="kicker">Akad Nikah</div><h3>07.00 WIB</h3></article>
-<article class="panel"><div class="kicker">Resepsi</div><p>Rumah Mempelai Wanita</p></article>
+<div class="panel">
+<h3>Akad Nikah</h3>
+<p><strong>Jumat, 27 November 2026</strong></p>
+<p>Pukul 07.00 WIB – selesai</p>
 </div>
-<div class="line"></div>
+<div class="panel">
+<h3>Resepsi</h3>
+<p><strong>Jumat, 27 November 2026</strong></p>
+<p>Pukul 10.00 WIB – selesai</p>
+</div>
+</div>
+<div class="panel">
 <h3>Lokasi Acara</h3>
-<p class="lead">Rumah Mempelai Wanita</p>
-<div class="mapbox">
-<iframe title="Peta lokasi acara" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=112.2100%2C-7.7360%2C112.2300%2C-7.7240&amp;layer=mapnik&amp;marker=-7.730362%2C112.219994" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<p>Rumah Mempelai Wanita</p>
+<p>Kediri, Jawa Timur</p>
 </div>
-<a class="btn" href="https://maps.app.goo.gl/5YQcSnMb2VsbN1739" target="_blank" rel="noopener">Buka Google Maps ↗</a>
+<div class="mapbox">
+<iframe title="Peta lokasi acara" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=112.209994%2C-7.740362%2C112.229994%2C-7.720362&layer=mapnik&marker=-7.730362%2C112.219994"></iframe>
+</div>
+<a class="btn" href="https://www.google.com/maps?q=-7.730362,112.219994" target="_blank" rel="noopener">Petunjuk Arah</a>
 </div>
 </section>
 
 <section class="slide" id="rsvp">
 <div class="wrap content reveal">
-<div class="kicker">Kehadiran dan doa restu</div>
-<h2>Konfirmasi Kehadiran</h2>
-<p class="lead">Mohon konfirmasi kehadiran dan doa restu. Jazakumullāhu khairan.</p>
+<div class="kicker">Konfirmasi kehadiran</div>
+<h2>RSVP</h2>
+<p class="lead">Merupakan suatu kebahagiaan bagi kami apabila panjenengan berkenan hadir. Mohon konfirmasi kehadiran melalui formulir berikut.</p>
 <form class="form" id="rsvpForm">
-<label>Nama Anda<input id="guestName" required placeholder="Nama lengkap"></label>
-<label>Konfirmasi kehadiran<select id="attendance"><option value="Hadir">Dengan senang hati hadir</option><option value="Tidak dapat hadir">Mohon maaf, belum bisa hadir</option></select></label>
-<label>Jumlah tamu<select id="guestCount"><option>1 orang</option><option>2 orang</option><option>3 orang</option><option>4 orang</option></select></label>
-<label>Ucapan &amp; doa<textarea id="guestMessage" rows="3" placeholder="Tuliskan doa dan barakah..."></textarea></label>
-<button class="btn" type="submit">Kirim melalui WhatsApp ↗</button>
+<label>Nama
+<input id="guestName" type="text" placeholder="Nama lengkap" required>
+</label>
+<label>Konfirmasi Kehadiran
+<select id="attendance" required>
+<option value="">Pilih konfirmasi</option>
+<option value="Insya Allah hadir">Insya Allah hadir</option>
+<option value="Mohon maaf belum dapat hadir">Mohon maaf belum dapat hadir</option>
+</select>
+</label>
+<label>Jumlah Tamu
+<select id="guestCount">
+<option value="1 orang">1 orang</option>
+<option value="2 orang">2 orang</option>
+<option value="3 orang">3 orang</option>
+<option value="4 orang">4 orang</option>
+</select>
+</label>
+<label>Ucapan & Doa
+<textarea id="guestMessage" rows="3" placeholder="Tuliskan doa terbaik untuk kedua mempelai..."></textarea>
+</label>
+<button class="btn" type="submit">Kirim Konfirmasi via WhatsApp</button>
 </form>
-<p class="tiny">Pesan akan dibuka di WhatsApp untuk dikirim. Tidak disimpan otomatis di website.</p>
 </div>
 </section>
 
 <section class="slide" id="gift">
 <div class="wrap content reveal">
-<div class="kicker">Tanda kasih, doa, dan barakah</div>
-<h2>Amplop Digital</h2>
-<div class="ornament">♡</div>
-<p class="lead">Doa restu panjenengan sangat berarti bagi kami. Jika berkenan, tanda kasih dapat disampaikan melalui rekening berikut. Jazakumullāhu khairan.</p>
+<div class="kicker">Tanda kasih</div>
+<h2>Hadiah Pernikahan</h2>
+<p class="lead">Doa restu panjenengan merupakan hadiah terindah bagi kami. Namun apabila ingin memberikan tanda kasih, dapat melalui rekening berikut.</p>
 <div class="gift">
-<div class="kicker">Bank BCA</div>
-<h3>Septian Bayu Suseno</h3>
-<div class="account" id="accountNo">1401627931</div>
-<button class="btn" id="copyAccount">Salin Nomor Rekening</button>
+<h3>Bank BCA</h3>
+<div class="account">1401627931</div>
+<p>Atas Nama: Bayu</p>
+<button class="btn" type="button">Salin Nomor Rekening</button>
 </div>
 <div class="gift">
-<div class="kicker">Bank BSI</div>
-<h3>Nilla Catur Wuni</h3>
-<div class="account" id="accountNoBsi">7339125435</div>
-<button class="btn" id="copyAccountBsi">Salin Nomor Rekening</button>
+<h3>Bank Syariah Indonesia</h3>
+<div class="account">7339125435</div>
+<p>Atas Nama: Nilla</p>
+<button class="btn" type="button">Salin Nomor Rekening</button>
 </div>
-<p class="footer-note">Jazakumullāhu khairan atas doa dan tanda kasih panjenengan.</p>
 </div>
 </section>
 
 <section class="slide" id="penutup">
 <div class="wrap content reveal">
-<svg class="landscape" viewBox="0 0 700 260" aria-hidden="true">
-<circle cx="350" cy="80" r="42" fill="#d9c9a6"/>
-<path d="M0 205 145 65 255 180 365 25 500 185 600 80 700 205V260H0Z" fill="#aab8a0"/>
-<path d="M0 230 180 145 300 220 445 115 575 215 700 150V260H0Z" fill="#405e4d"/>
+<div class="kicker">Wassalamu’alaikum Warahmatullahi Wabarakatuh</div>
+<h2>Jazakumullāhu Khairan</h2>
+<div class="ornament">❧</div>
+<p class="lead">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila panjenengan berkenan hadir serta memberikan doa restu.</p>
+<p class="lead">Semoga Allah SWT senantiasa melimpahkan rahmat, keberkahan, dan kebahagiaan kepada kita semua.</p>
+<div class="line"></div>
+<div class="names">Bayu & Nilla</div>
+<p class="tiny">27 NOVEMBER 2026</p>
+<button class="cat-home" id="catHome" type="button" aria-label="Kembali ke halaman pembuka">
+<span class="cat-stage">
+<svg class="cat-illustration" viewBox="0 0 140 130" role="img" aria-label="Ilustrasi kucing lucu">
+<path d="M30 51L25 17Q24 10 32 15L54 34Q70 27 86 34L108 15Q116 10 115 19L110 54Q123 69 117 91Q110 117 70 117Q30 117 23 91Q17 69 30 51Z" fill="#d6b99a" stroke="#705d4c" stroke-width="3"/>
+<path d="M31 29L49 43L34 49Z" fill="#b98578"/><path d="M108 29L91 43L105 49Z" fill="#b98578"/>
+<ellipse cx="51" cy="70" rx="5" ry="8" fill="#354c3e"/><ellipse cx="89" cy="70" rx="5" ry="8" fill="#354c3e"/>
+<path d="M65 83Q70 89 75 83" fill="none" stroke="#705d4c" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M70 78L66 75H74Z" fill="#b97878"/>
+<path d="M48 83L17 78M48 89L18 94M92 83L123 78M92 89L122 94" stroke="#705d4c" stroke-width="2" stroke-linecap="round"/>
+<path d="M51 105Q70 115 89 105" fill="none" stroke="#b98578" stroke-width="3" stroke-linecap="round"/>
 </svg>
-<div class="kicker">Alhamdulillāh</div>
-<h2>Terima Kasih</h2>
-<p class="lead">Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Semoga Allah SWT senantiasa melimpahkan keberkahan kepada kita semua.</p>
-<div class="ornament">✦ ❧ ✦</div>
-<p class="lead">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
-<p class="lead">“Ya Tuhan kami, anugerahkanlah kepada kami pasangan dan keturunan sebagai penyenang hati, dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa.” (QS. Al-Furqan: 74)</p>
-<p class="lead">Wassalamu’alaikum warahmatullahi wabarakatuh.</p>
-<div class="names">Bayu &amp; Nilla</div>
-<button type="button" class="cat-home" id="catHome" aria-label="Kembali ke halaman pertama">
-<span class="cat-stage"><span style="font-size:65px">🐈</span></span>
-<span class="cat-caption">KLIK KUCING UNTUK KEMBALI 🐾</span>
+</span>
+<span class="cat-caption">KLIK KUCING UNTUK KEMBALI KE ATAS</span>
 </button>
-<p class="tiny">Dibuat dengan cinta · 1.11.2026</p>
+<p class="footer-note">Dengan penuh rasa hormat,<br>Keluarga Besar Bayu & Nilla</p>
 </div>
 </section>
-</main>
+</div>
 
-<nav class="bottom-nav" id="pageNav" aria-label="Navigasi halaman undangan">
-<button type="button" data-page="0" class="active"><span class="nav-icon">⌂</span><span class="nav-label">Pembuka</span></button>
-<button type="button" data-page="1"><span class="nav-icon">♡</span><span class="nav-label">Mempelai</span></button>
-<button type="button" data-page="2"><span class="nav-icon">▦</span><span class="nav-label">Acara</span></button>
-<button type="button" data-page="3"><span class="nav-icon">✉</span><span class="nav-label">RSVP</span></button>
-<button type="button" data-page="4"><span class="nav-icon">♧</span><span class="nav-label">Amplop</span></button>
-<button type="button" data-page="5"><span class="nav-icon">✦</span><span class="nav-label">Penutup</span></button>
+<!-- Halaman pembuat tautan undangan personal -->
+<section class="generator-page" id="generatorPage" hidden>
+<div class="generator-card">
+<div class="eyebrow">Undangan Pernikahan</div>
+<div class="generator-mark">❧</div>
+<h1>Buat Tautan Undangan</h1>
+<p>Masukkan nama tamu untuk membuat tautan undangan pribadi Bayu & Nilla.</p>
+<label for="generatorName">Nama Tamu Undangan</label>
+<input id="generatorName" type="text" placeholder="Contoh: Bapak Ahmad dan Keluarga">
+<div class="generator-preview" id="generatorPreview">Nama Tamu Undangan</div>
+<div class="generator-actions">
+<button class="btn" id="generateLinkBtn" type="button">Buat Tautan Undangan</button>
+<button class="btn" id="shareWhatsAppBtn" type="button" hidden>Bagikan via WhatsApp</button>
+<button class="btn" id="copyInviteLinkBtn" type="button" hidden>Salin Tautan</button>
+</div>
+<div class="generator-result" id="generatorResult"></div>
+</div>
+</section>
+
+<nav class="bottom-nav" id="pageNav" aria-label="Navigasi halaman">
+<button class="active" data-page="0" aria-label="Halaman pembuka"><span class="nav-icon">⌂</span><span class="nav-label">Pembuka</span></button>
+<button data-page="1" aria-label="Halaman mempelai"><span class="nav-icon">♡</span><span class="nav-label">Mempelai</span></button>
+<button data-page="2" aria-label="Halaman acara"><span class="nav-icon">♧</span><span class="nav-label">Acara</span></button>
+<button data-page="3" aria-label="Halaman RSVP"><span class="nav-icon">✉</span><span class="nav-label">RSVP</span></button>
+<button data-page="4" aria-label="Halaman hadiah"><span class="nav-icon">♧</span><span class="nav-label">Amplop</span></button>
+<button data-page="5" aria-label="Halaman penutup"><span class="nav-icon">✦</span><span class="nav-label">Penutup</span></button>
 </nav>
 
 <script>
 const sections=[...document.querySelectorAll('.slide')];
+const titles=['Pembuka','Mempelai','Acara','RSVP','Amplop','Penutup'];
 let current=0;
 const pageNav=document.getElementById('pageNav');
 const pageButtons=[...pageNav.querySelectorAll('button[data-page]')];
 
+// Personalisasi nama tamu dari parameter URL ?to=Nama%20Tamu
 const inviteParams=new URLSearchParams(window.location.search);
 const inviteeName=(inviteParams.get('to')||'').replace(/[<>]/g,'').trim().slice(0,120);
-
 if(inviteeName){
  document.getElementById('personalGuestName').textContent=inviteeName;
- document.getElementById('personalGuestNameBody').textContent=inviteeName;
  document.getElementById('guestName').value=inviteeName;
  document.title='Undangan untuk '+inviteeName+' — Bayu & Nilla';
 }
 
-pageButtons.forEach(button=>{
- button.addEventListener('click',()=>go(Number(button.dataset.page)));
-});
-
+pageButtons.forEach(button=>button.addEventListener('click',()=>go(Number(button.dataset.page))));
 function go(i){
  current=Math.max(0,Math.min(sections.length-1,i));
  sections[current].scrollIntoView({behavior:'smooth',block:'start'});
  updateNav();
 }
-
 function updateNav(){
  pageButtons.forEach((button,i)=>{
   const active=i===current;
@@ -393,34 +409,27 @@ function updateNav(){
 }
 updateNav();
 
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-  if(e.isIntersecting){
-   e.target.querySelector('.reveal')?.classList.add('visible');
-   current=sections.indexOf(e.target);
-   updateNav();
-  }
- });
-},{threshold:.45});
-
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+ if(e.isIntersecting){
+  e.target.querySelector('.reveal')?.classList.add('visible');
+  current=sections.indexOf(e.target);
+  updateNav();
+ }
+}),{threshold:.45});
 sections.forEach(s=>observer.observe(s));
 
 document.getElementById('openInvite').addEventListener('click',()=>{
  document.getElementById('cover').classList.add('hidden');
  document.getElementById('home').scrollIntoView({behavior:'smooth'});
  const a=document.getElementById('bgMusic');
- a.play().then(()=>{
-  document.getElementById('musicBtn').textContent='Ⅱ';
- }).catch(()=>{});
+ a.play().then(()=>document.getElementById('musicBtn').textContent='Ⅱ').catch(()=>{});
 });
 
 const audio=document.getElementById('bgMusic');
 const musicBtn=document.getElementById('musicBtn');
-
 musicBtn.addEventListener('click',()=>{
  if(audio.paused){
-  audio.play().then(()=>musicBtn.textContent='Ⅱ')
-  .catch(()=>alert('Tambahkan file music.mp3 ke folder undangan terlebih dahulu.'));
+  audio.play().then(()=>musicBtn.textContent='Ⅱ').catch(()=>alert('Tambahkan file music.mp3 ke folder undangan terlebih dahulu.'));
  }else{
   audio.pause();
   musicBtn.textContent='♫';
@@ -428,38 +437,82 @@ musicBtn.addEventListener('click',()=>{
 });
 audio.addEventListener('ended',()=>musicBtn.textContent='♫');
 
-/* Suasana gunung berubah otomatis mengikuti jam WIB */
+// Suasana ilustrasi gunung mengikuti jam lokal perangkat.
 function updateSkyScene(){
  const now=new Date();
- const hour=Number(new Intl.DateTimeFormat('en-US',{
-  hour:'2-digit',
-  hour12:false,
-  timeZone:'Asia/Jakarta'
- }).format(now));
-
+ const hour=now.getHours();
  const isDay=hour>=6 && hour<18;
  const scene=document.getElementById('skyScene');
  if(!scene)return;
-
  scene.dataset.sky=isDay?'day':'night';
  document.getElementById('skyTimeIcon').textContent=isDay?'☀':'☾';
  document.getElementById('skyTimeLabel').textContent=isDay?'SIANG':'MALAM';
-
  document.getElementById('skyClock').textContent=
   new Intl.DateTimeFormat('id-ID',{
-   hour:'2-digit',
-   minute:'2-digit',
-   hour12:false,
-   timeZone:'Asia/Jakarta'
+   hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Jakarta'
   }).format(now)+' WIB';
-
- document.getElementById('skyWeatherIcon').textContent='☀';
- document.getElementById('skyWeatherLabel').textContent='CUACA CERAH';
 }
+
+// CUACA AKTUAL LOKASI ACARA — OPEN-METEO
+// Koordinat lokasi: -7.730362, 112.219994
+// Data diperbarui otomatis setiap 30 menit.
+const weatherUrl='https://api.open-meteo.com/v1/forecast?latitude=-7.730362&longitude=112.219994&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&hourly=precipitation_probability&forecast_days=1&timezone=Asia%2FJakarta';
+
+function weatherDescription(code){
+ if(code===0)return ['☀','CERAH'];
+ if([1,2].includes(code))return ['🌤','CERAH BERAWAN'];
+ if(code===3)return ['☁','BERAWAN'];
+ if([45,48].includes(code))return ['🌫','BERKABUT'];
+ if([51,53,55,56,57].includes(code))return ['🌦','GERIMIS'];
+ if([61,63,65,66,67,80,81,82].includes(code))return ['🌧','HUJAN'];
+ if([71,73,75,77,85,86].includes(code))return ['❄','SALJU'];
+ if([95,96,99].includes(code))return ['⛈','BADAI PETIR'];
+ return ['🌡','KONDISI CUACA'];
+}
+
+async function updateActualWeather(){
+ const icon=document.getElementById('skyWeatherIcon');
+ const label=document.getElementById('skyWeatherLabel');
+ const detail=document.getElementById('skyWeatherDetail');
+
+ try{
+  const response=await fetch(weatherUrl,{cache:'no-store'});
+  if(!response.ok)throw new Error('weather unavailable');
+
+  const data=await response.json();
+  const c=data.current;
+  const desc=weatherDescription(c.weather_code);
+
+  icon.textContent=desc[0];
+  label.textContent=desc[1];
+
+  const hourIndex=data.hourly.time.indexOf(c.time);
+  const rain=hourIndex>=0
+   ?data.hourly.precipitation_probability[hourIndex]
+   :null;
+
+  detail.textContent=
+   `${Math.round(c.temperature_2m)}°C · Peluang hujan ${rain==null?'—':rain+'%'} · diperbarui ${
+    new Intl.DateTimeFormat('id-ID',{
+     hour:'2-digit',
+     minute:'2-digit',
+     timeZone:'Asia/Jakarta'
+    }).format(new Date())
+   } WIB`;
+
+ }catch(error){
+  icon.textContent='☁';
+  label.textContent='CUACA TIDAK TERSEDIA';
+  detail.textContent='Periksa koneksi internet';
+ }
+}
+
 updateSkyScene();
 setInterval(updateSkyScene,60000);
+updateActualWeather();
+setInterval(updateActualWeather,1800000);
 
-/* Countdown menuju akad nikah */
+// Hitung mundur menuju hari pernikahan.
 const eventDate=new Date('2026-11-27T07:00:00+07:00');
 
 function tick(){
@@ -470,7 +523,6 @@ function tick(){
   Math.floor(d%3600000/60000),
   Math.floor(d%60000/1000)
  ];
-
  document.querySelectorAll('#countdown strong').forEach((e,i)=>{
   e.textContent=String(vals[i]).padStart(2,'0');
  });
@@ -478,21 +530,15 @@ function tick(){
 tick();
 setInterval(tick,1000);
 
-/* RSVP melalui WhatsApp */
+// RSVP melalui WhatsApp.
 document.getElementById('rsvpForm').addEventListener('submit',e=>{
  e.preventDefault();
-
  const name=document.getElementById('guestName').value.trim();
  const att=document.getElementById('attendance').value;
  const num=document.getElementById('guestCount').value;
  const msg=document.getElementById('guestMessage').value.trim();
 
- const text=`Assalamu’alaikum warahmatullahi wabarakatuh.
-Saya ${name}, ingin mengonfirmasi undangan pernikahan Bayu & Nilla: ${att}.
-Jumlah tamu: ${num}.
-Ucapan dan doa: ${msg||'-'}.
-Jazakumullāhu khairan.
-Wassalamu’alaikum warahmatullahi wabarakatuh.`;
+ const text=`Assalamu’alaikum warahmatullahi wabarakatuh. Saya ${name}, ingin mengonfirmasi undangan pernikahan Bayu & Nilla: ${att}. Jumlah tamu: ${num}. Ucapan dan doa: ${msg||'-'}. Jazakumullāhu khairan. Wassalamu’alaikum warahmatullahi wabarakatuh.`;
 
  window.open(
   'https://wa.me/6285257475475?text='+encodeURIComponent(text),
@@ -501,7 +547,7 @@ Wassalamu’alaikum warahmatullahi wabarakatuh.`;
  );
 });
 
-/* Tombol salin rekening */
+// Tombol salin nomor rekening.
 document.querySelectorAll('.gift').forEach(card=>{
  const button=card.querySelector('button');
  const account=card.querySelector('.account');
@@ -509,7 +555,6 @@ document.querySelectorAll('.gift').forEach(card=>{
 
  button.addEventListener('click',async()=>{
   const value=account.textContent.trim();
-
   try{
    if(navigator.clipboard&&window.isSecureContext){
     await navigator.clipboard.writeText(value);
@@ -524,7 +569,6 @@ document.querySelectorAll('.gift').forEach(card=>{
     field.remove();
     if(!ok)throw new Error('copy failed');
    }
-
    button.textContent='Nomor berhasil disalin ✓';
    setTimeout(()=>button.textContent='Salin Nomor Rekening',2200);
   }catch(e){
@@ -533,13 +577,13 @@ document.querySelectorAll('.gift').forEach(card=>{
  });
 });
 
-/* Kucing kembali ke halaman pertama */
+// Kucing B&N kembali ke halaman pertama.
 document.getElementById('catHome').addEventListener('click',()=>{
  document.getElementById('cover').classList.remove('hidden');
  window.scrollTo({top:0,behavior:'smooth'});
 });
 
-/* Generator tautan undangan pribadi */
+// Mode pembuat tautan undangan: tambahkan ?buat pada alamat halaman.
 const generatorPage=document.getElementById('generatorPage');
 
 if(new URLSearchParams(location.search).has('buat')){
@@ -548,7 +592,7 @@ if(new URLSearchParams(location.search).has('buat')){
  document.getElementById('musicBtn').style.display='none';
  document.getElementById('pages').style.display='none';
  document.querySelector('.bottom-nav').style.display='none';
- document.title='Buat Tautan Undangan — Bayu & Nilla';
+ document.title='Buat Tautan Undangan — Puncak Cerita Kita';
 }
 
 const generatorName=document.getElementById('generatorName');
@@ -578,10 +622,8 @@ generateLinkBtn.addEventListener('click',()=>{
  }
 
  generatedInviteUrl=location.origin+location.pathname+'?to='+encodeURIComponent(name);
-
  generatorResult.style.display='block';
- generatorResult.innerHTML=
-  '<strong>Tautan undangan berhasil dibuat:</strong><br><a id="generatedInviteAnchor" target="_blank" rel="noopener"></a>';
+ generatorResult.innerHTML='<strong>Tautan undangan berhasil dibuat:</strong><br><a id="generatedInviteAnchor" target="_blank" rel="noopener"></a>';
 
  const a=document.getElementById('generatedInviteAnchor');
  a.href=generatedInviteUrl;
@@ -598,7 +640,7 @@ shareWhatsAppBtn.addEventListener('click',()=>{
  const msg='Assalamu’alaikum warahmatullahi wabarakatuh. Yth. '+name+
  ', dengan mengharap rahmat dan ridha Allah SWT serta barakah-Nya, kami mengundang panjenengan untuk hadir dan mendoakan pernikahan Bayu & Nilla. Silakan buka undangan pribadi berikut: '+
  generatedInviteUrl+
- '. Jazakumullāhu khairan. Wassalamu’alaikum warahmatullahi wabarakatuh.';
+ ' . Jazakumullāhu khairan. Wassalamu’alaikum warahmatullahi wabarakatuh.';
 
  window.open(
   'https://wa.me/?text='+encodeURIComponent(msg),
@@ -627,6 +669,7 @@ copyInviteLinkBtn.addEventListener('click',async()=>{
 
   copyInviteLinkBtn.textContent='Tautan berhasil disalin ✓';
   setTimeout(()=>copyInviteLinkBtn.textContent='Salin Tautan',2200);
+
  }catch(e){
   window.prompt('Salin tautan undangan ini:',generatedInviteUrl);
  }
