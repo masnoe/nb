@@ -43,6 +43,17 @@
 .venue-weather-note{font:10px/1.5 Arial,sans-serif;color:#849080;margin:10px 0 0}
 @media(max-width:600px){.venue-weather{padding:13px 14px;margin:10px auto 20px}.venue-weather-temp{font-size:23px}}
 
+
+/* Suasana ilustrasi gunung mengikuti waktu lokal di lokasi acara */
+.mountain-scene .mountain-sky{transition:opacity .8s ease}
+.mountain-scene .night-sky,.mountain-scene .night-elements{opacity:0;transition:opacity .8s ease}
+.mountain-scene .day-elements{opacity:1;transition:opacity .8s ease}
+.mountain-scene.is-night .night-sky,.mountain-scene.is-night .night-elements{opacity:1}
+.mountain-scene.is-night .day-sky,.mountain-scene.is-night .day-elements{opacity:0}
+.mountain-scene.is-night .front-mountain{fill:#354b5d}
+.mountain-scene.is-night .mountain-foreground{fill:#1b2e40}
+.mountain-scene path{transition:fill .8s ease}
+
 </style>
 </head>
 <body>
@@ -71,7 +82,12 @@
 <div class="cover" id="cover"><svg class="mountain" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="back" d="M0 500 170 260 300 410 500 150 760 470 900 290 1200 520V900H0Z"/><path d="M0 600 220 390 360 530 620 260 820 520 1000 360 1200 570V900H0Z"/><path d="M0 710 180 560 330 660 540 480 760 680 960 500 1200 690V900H0Z"/></svg><div class="cover-content"><div class="eyebrow">Undangan Pernikahan</div><h1>Puncak<br>Cerita Kita</h1><div class="ornament">✦ ❧ ✦</div><div class="names">Bayu &amp; Nilla</div><div class="guest-to"><br>Kepada Yth. Bapak/Ibu/Saudara/i<strong id="personalGuestName">Tamu Undangan</strong></div><button class="btn light" id="openInvite">Buka Undangan ↗</button></div></div>
 <button class="floating-music" id="musicBtn" aria-label="Putar atau jeda musik">♫</button><audio id="bgMusic" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
 <main id="pages">
-<section class="slide" id="home"><div class="wrap content reveal"><div class="kicker">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div><svg class="landscape" viewBox="0 0 700 300" role="img" aria-label="Ilustrasi pegunungan dan matahari"><circle cx="350" cy="90" r="48" fill="#d9c9a6"/><path d="M0 220 120 95 210 185 330 35 460 200 550 105 700 230V300H0Z" fill="#9eaf9b"/><path d="m275 95 55-60 58 72-27-16-23 7-25-13-19 12Z" fill="#f6f2e8"/><path d="M0 250 150 160 270 230 410 130 560 240 650 170 700 210V300H0Z" fill="#627b65"/><path d="M0 280q160-40 300 0t400-5v25H0Z" fill="#24382f"/></svg><div class="venue-weather" id="venueWeather" aria-live="polite">
+<section class="slide" id="home"><div class="wrap content reveal"><div class="kicker">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div><svg class="landscape mountain-scene" id="mountainScene" viewBox="0 0 700 300" role="img" aria-label="Ilustrasi pegunungan dengan suasana siang atau malam">
+<defs><linearGradient id="mountainDaySky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6d9d1"/><stop offset="1" stop-color="#f2e8d2"/></linearGradient><linearGradient id="mountainNightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#172b45"/><stop offset="1" stop-color="#53647a"/></linearGradient></defs>
+<rect class="mountain-sky day-sky" width="700" height="300" fill="url(#mountainDaySky)"/><rect class="mountain-sky night-sky" width="700" height="300" fill="url(#mountainNightSky)"/>
+<g class="day-elements"><circle cx="520" cy="75" r="39" fill="#e8c982"/><g stroke="#e8c982" stroke-width="3" stroke-linecap="round"><path d="M520 20v-12M520 142v-12M465 75h-12M587 75h-12M481 36l-9-9M568 123l-9-9M559 36l9-9M472 123l9-9"/></g></g>
+<g class="night-elements"><circle cx="520" cy="75" r="34" fill="#f5edcf"/><circle cx="536" cy="61" r="31" fill="#263b58"/><g fill="#fff4d5"><circle cx="420" cy="55" r="2.5"/><circle cx="460" cy="110" r="2"/><circle cx="585" cy="40" r="2"/><circle cx="610" cy="112" r="1.8"/><circle cx="390" cy="145" r="1.7"/><circle cx="555" cy="150" r="1.8"/></g></g>
+<path d="M0 220 120 95 210 185 330 35 460 200 550 105 700 230V300H0Z" fill="#9eaf9b"/><path d="m275 95 55-60 58 72-27-16-23 7-25-13-19 12Z" fill="#f6f2e8"/><path class="front-mountain" d="M0 250 150 160 270 230 410 130 560 240 650 170 700 210V300H0Z" fill="#627b65"/><path class="mountain-foreground" d="M0 280q160-40 300 0t400-5v25H0Z" fill="#24382f"/></svg><div class="venue-weather" id="venueWeather" aria-live="polite">
 <div class="venue-weather-head"><div><div class="venue-weather-label">Kondisi di tempat acara</div><div class="venue-weather-place">Kediaman Mempelai Wanita · Kediri</div></div><span class="venue-weather-chip" id="venueDayPart">Memeriksa waktu…</span></div>
 <div class="venue-weather-main"><div class="venue-weather-icon" id="venueWeatherIcon">⛅</div><div><div class="venue-weather-temp" id="venueTemperature">Memuat…</div><div class="venue-weather-desc" id="venueWeatherDesc">Mengambil kondisi cuaca lokasi acara</div></div></div>
 <div class="venue-weather-meta"><span class="venue-weather-chip" id="venueLocalTime">Waktu setempat: —</span><span class="venue-weather-chip" id="venueRain">Hujan: —</span></div>
@@ -138,34 +154,42 @@ copyInviteLinkBtn.addEventListener('click',async()=>{if(!generatedInviteUrl)retu
     77:['Butiran salju','🌨️'],80:['Hujan lokal ringan','🌦️'],81:['Hujan lokal','🌧️'],82:['Hujan lokal lebat','⛈️'],
     85:['Hujan salju ringan','🌨️'],86:['Hujan salju lebat','🌨️'],95:['Badai petir','⛈️'],96:['Badai petir + hujan es','⛈️'],99:['Badai petir kuat','⛈️']
   };
-  function updateLocalClock(){
+  function updateLocalClock(isDayFromApi){
     const now=new Date();
     const parts=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
     const hour=Number(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Jakarta',hour:'2-digit',hourCycle:'h23'}).format(now));
+    const isDay=(isDayFromApi===0||isDayFromApi===1)?isDayFromApi===1:(hour>=6&&hour<18);
     $('venueLocalTime').textContent='Waktu setempat: '+parts+' WIB';
-    $('venueDayPart').textContent=(hour>=6&&hour<18)?'☀️ Waktu siang':'🌙 Waktu malam';
+    $('venueDayPart').textContent=isDay?'☀️ Waktu siang':'🌙 Waktu malam';
+    const mountain=$('mountainScene');
+    if(mountain)mountain.classList.toggle('is-night',!isDay);
   }
-  updateLocalClock(); setInterval(updateLocalClock,30000);
-  fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,is_day&hourly=precipitation_probability&forecast_days=1&timezone=Asia%2FJakarta')
-    .then(r=>{if(!r.ok)throw new Error('Cuaca tidak tersedia');return r.json()})
-    .then(data=>{
+  updateLocalClock(); setInterval(()=>updateLocalClock(),30000);
+  async function refreshVenueWeather(){
+    try{
+      const url='https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,is_day&hourly=precipitation_probability&forecast_days=1&timezone=Asia%2FJakarta';
+      const response=await fetch(url,{cache:'no-store'});
+      if(!response.ok)throw new Error('Cuaca tidak tersedia');
+      const data=await response.json();
       const c=data.current||{}, info=weatherText[c.weather_code]||['Kondisi cuaca berubah-ubah','🌤️'];
       $('venueWeatherIcon').textContent=info[1];
       $('venueTemperature').textContent=(c.temperature_2m!=null?Math.round(c.temperature_2m)+'°C':'—');
       $('venueWeatherDesc').textContent=info[0]+' · Kelembapan '+(c.relative_humidity_2m!=null?c.relative_humidity_2m+'%':'—');
-      const idx=(data.hourly&&data.hourly.time)?data.hourly.time.indexOf(c.time): -1;
+      const idx=(data.hourly&&data.hourly.time)?data.hourly.time.indexOf(c.time):-1;
       const rain=idx>=0?data.hourly.precipitation_probability[idx]:null;
       $('venueRain').textContent='Peluang hujan: '+(rain!=null?rain+'%':'—');
-      $('venueWeatherNote').textContent='Cuaca aktual di titik lokasi acara · diperbarui otomatis. Prakiraan untuk 27 November 2026 akan ditampilkan saat data tersedia mendekati hari acara.';
-      if(c.is_day===0)$('venueDayPart').textContent='🌙 Waktu malam';
-      else if(c.is_day===1)$('venueDayPart').textContent='☀️ Waktu siang';
-    })
-    .catch(()=>{
+      $('venueWeatherNote').textContent='Cuaca aktual di titik lokasi acara · Kediaman Mempelai Wanita, Kediri. Diperbarui otomatis setiap 30 menit. Ini kondisi saat ini, bukan prakiraan untuk tanggal pernikahan.';
+      updateLocalClock(c.is_day);
+    }catch(error){
       $('venueTemperature').textContent='Belum tersedia';
       $('venueWeatherDesc').textContent='Koneksi data cuaca belum dapat dimuat';
       $('venueRain').textContent='Peluang hujan: —';
-      $('venueWeatherNote').textContent='Informasi ini khusus titik lokasi acara. Silakan buka kembali saat koneksi internet tersedia.';
-    });
+      $('venueWeatherNote').textContent='Cuaca di tempat acara belum dapat dimuat. Silakan periksa koneksi internet.';
+      updateLocalClock();
+    }
+  }
+  refreshVenueWeather();
+  setInterval(refreshVenueWeather,30*60*1000);
 })();
 
 </script>
