@@ -68,14 +68,14 @@
 .cat-home .cat-caption{font-size:8px;letter-spacing:.04em;text-align:center}
 @media(max-width:600px){.cat-home{right:10px;bottom:calc(72px + env(safe-area-inset-bottom));width:82px;padding:4px 5px}.cat-stage{width:68px}.cat-home .cat-caption{font-size:7px}}
 
-/* Maskot kucing pendaki: kecil, transparan, dan bisa digeser */
-.cat-home{display:none;position:fixed;right:12px;bottom:calc(78px + env(safe-area-inset-bottom));left:auto;top:auto;z-index:40;width:58px;height:auto;margin:0;padding:0;border:0;border-radius:0;background:transparent!important;box-shadow:none!important;backdrop-filter:none;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;line-height:0}
+/* PENGATUR UKURAN KUCING: sedang = 94px desktop, 76px HP */
+.cat-home{display:none;position:fixed;right:12px;bottom:calc(78px + env(safe-area-inset-bottom));left:auto;top:auto;z-index:40;width:94px;height:auto;margin:0;padding:0;border:0;border-radius:0;background:transparent!important;box-shadow:none!important;backdrop-filter:none;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;line-height:0}
 .cat-home.is-visible{display:block}
 .cat-stage{display:block;width:100%;line-height:0;animation:catFloat 3s ease-in-out infinite;filter:drop-shadow(0 3px 5px #24382f25)}
 .cat-home .cat-illustration{display:block;width:100%;height:auto;object-fit:contain;background:transparent;pointer-events:none}
 .cat-home.is-dragging{cursor:grabbing}
 .cat-home.is-dragging .cat-stage{animation:none}
-@media(max-width:600px){.cat-home{width:48px;right:8px;bottom:calc(76px + env(safe-area-inset-bottom))}}
+@media(max-width:600px){.cat-home{width:76px;right:8px;bottom:calc(76px + env(safe-area-inset-bottom))}}
 
 </style>
 </head>
