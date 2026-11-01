@@ -47,6 +47,29 @@
 @media(max-width:600px){.venue-digital-time{font-size:14px}.venue-digital-date{font-size:9px}.venue-weather-cell{gap:6px;padding-left:5px;padding-right:5px}.venue-weather-icon{font-size:23px}}
 @media(max-width:600px){.venue-weather{padding:0 8px 12px;margin:-8px auto 20px}.venue-weather-location{font-size:9px}.venue-weather-location strong{font-size:14px}.venue-weather-row{grid-template-columns:1.35fr .9fr 1.15fr}.venue-weather-cell{gap:5px;padding:4px 5px}.venue-weather-icon{font-size:22px}.venue-weather-title{font-size:10px}.venue-weather-desc,.venue-weather-time{font-size:9px}.venue-weather-temp{font-size:16px}}
 
+
+/* Perapian baris jam, siang/malam, dan cuaca agar seimbang */
+.venue-weather-location{width:100%;text-align:center;padding:12px 8px 10px;margin:0 auto;border-bottom:1px solid #d9dfd2}
+.venue-weather-location strong{text-align:center;line-height:1.35}
+.venue-weather-row{grid-template-columns:1.35fr 1fr 1.2fr;align-items:stretch;gap:0;margin:12px auto 0;width:100%}
+.venue-weather-cell{position:relative;display:flex;align-items:center;justify-content:center;min-height:58px;gap:8px;padding:6px 8px;text-align:left}
+.venue-weather-cell+.venue-weather-cell{border-left:0}
+.venue-weather-cell+.venue-weather-cell::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:54px;width:1px;background:#9eae9c}
+.venue-digital-cell>div{text-align:left;min-width:0}
+.venue-weather-title{line-height:1.3;white-space:nowrap}
+.venue-digital-time{letter-spacing:.025em}
+@media(max-width:600px){
+ .venue-weather{padding-left:8px;padding-right:8px}
+ .venue-weather-row{grid-template-columns:1.32fr .95fr 1.18fr}
+ .venue-weather-cell{gap:5px;padding:5px 6px;min-height:58px}
+ .venue-weather-cell+.venue-weather-cell::before{height:52px}
+ .venue-weather-icon{font-size:22px}
+ .venue-weather-title{font-size:9.5px;letter-spacing:.035em}
+ .venue-digital-time{font-size:13px}
+ .venue-digital-date,.venue-weather-desc,.venue-weather-time{font-size:9px;line-height:1.35}
+}
+@media(max-width:370px){.venue-weather-row{grid-template-columns:1.28fr .92fr 1.15fr}.venue-weather-cell{padding-left:4px;padding-right:4px}.venue-weather-icon{font-size:19px}.venue-digital-time{font-size:12px}}
+
 /* Gunung, awan, matahari dan bulan berubah mengikuti siang/malam */
 .mountain-scene{width:min(100%,650px);margin:25px auto 0;overflow:hidden;border-radius:20px 20px 0 0;box-shadow:0 8px 24px #24382f12}
 .mountain-scene .mountain-sky,.mountain-scene .day-elements,.mountain-scene .night-elements{transition:opacity .9s ease}
@@ -98,6 +121,24 @@
   #penutup .landscape{max-height:14svh;width:min(62vw,230px)}
   #penutup .lead{font-size:10px;line-height:1.28;margin:5px auto}
   #penutup .ornament{margin:3px 0}
+}
+
+
+/* Garis pemisah kartu cuaca: satu tinggi dan sejajar persis */
+.venue-weather-row{
+  position:relative;
+  background-image:linear-gradient(#9eae9c,#9eae9c),linear-gradient(#9eae9c,#9eae9c);
+  background-repeat:no-repeat;
+  background-size:1px 52px,1px 52px;
+  background-position:38.03% 50%,66.20% 50%;
+}
+.venue-weather-cell+.venue-weather-cell{border-left:0!important}
+.venue-weather-cell+.venue-weather-cell::before{content:none!important;display:none!important}
+@media(max-width:600px){
+  .venue-weather-row{background-position:38.26% 50%,65.80% 50%;background-size:1px 48px,1px 48px}
+}
+@media(max-width:370px){
+  .venue-weather-row{background-position:38.20% 50%,65.67% 50%;background-size:1px 44px,1px 44px}
 }
 
 </style>
