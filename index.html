@@ -33,7 +33,7 @@
 .venue-weather{width:min(100%,650px);margin:-10px auto 24px;padding:0 18px 16px;background:#fffdf2;border:1px solid #d0d7c8;border-top:0;border-radius:0 0 22px 22px;box-shadow:0 10px 26px #24382f12;text-align:center}
 .venue-weather-location{font:10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#71816f;padding:12px 0 10px;border-bottom:1px solid #e0e3d7}
 .venue-weather-location strong{display:block;margin-top:4px;font:15px Georgia,serif;letter-spacing:0;text-transform:none;color:var(--forest)}
-.venue-weather-row{display:grid;grid-template-columns:1fr 1.35fr 1.45fr;align-items:center;margin-top:10px}
+.venue-weather-row{display:grid;grid-template-columns:1.45fr 1fr 1.35fr;align-items:center;margin-top:10px}
 .venue-weather-cell{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;padding:4px 9px;text-align:left}
 .venue-weather-cell+.venue-weather-cell{border-left:1px solid #9eae9c}
 .venue-weather-icon{font:28px/1 Arial,sans-serif;flex:0 0 auto}
@@ -41,7 +41,11 @@
 .venue-weather-title{font:12px Georgia,serif;letter-spacing:.06em;color:var(--forest)}
 .venue-weather-desc{font:11px/1.45 Arial,sans-serif;color:#657667;margin-top:3px}
 .venue-weather-time{font:11px Arial,sans-serif;color:#657667;margin-top:3px}
-@media(max-width:600px){.venue-weather{padding:0 8px 12px;margin:-8px auto 20px}.venue-weather-location{font-size:9px}.venue-weather-location strong{font-size:14px}.venue-weather-row{grid-template-columns:.9fr 1.15fr 1.35fr}.venue-weather-cell{gap:5px;padding:4px 5px}.venue-weather-icon{font-size:22px}.venue-weather-title{font-size:10px}.venue-weather-desc,.venue-weather-time{font-size:9px}.venue-weather-temp{font-size:16px}}
+.venue-digital-time{font: bold 17px/1.2 Arial,sans-serif;letter-spacing:.04em;color:var(--forest);font-variant-numeric:tabular-nums;margin-top:4px;white-space:nowrap}
+.venue-digital-date{font:10px/1.35 Arial,sans-serif;color:#657667;margin-top:3px;white-space:normal}
+.venue-digital-cell{gap:7px}
+@media(max-width:600px){.venue-digital-time{font-size:14px}.venue-digital-date{font-size:9px}.venue-weather-cell{gap:6px;padding-left:5px;padding-right:5px}.venue-weather-icon{font-size:23px}}
+@media(max-width:600px){.venue-weather{padding:0 8px 12px;margin:-8px auto 20px}.venue-weather-location{font-size:9px}.venue-weather-location strong{font-size:14px}.venue-weather-row{grid-template-columns:1.35fr .9fr 1.15fr}.venue-weather-cell{gap:5px;padding:4px 5px}.venue-weather-icon{font-size:22px}.venue-weather-title{font-size:10px}.venue-weather-desc,.venue-weather-time{font-size:9px}.venue-weather-temp{font-size:16px}}
 
 /* Gunung, awan, matahari dan bulan berubah mengikuti siang/malam */
 .mountain-scene{width:min(100%,650px);margin:25px auto 0;overflow:hidden;border-radius:20px 20px 0 0;box-shadow:0 8px 24px #24382f12}
@@ -76,6 +80,25 @@
 .cat-home.is-dragging{cursor:grabbing}
 .cat-home.is-dragging .cat-stage{animation:none}
 @media(max-width:600px){.cat-home{width:76px;right:8px;bottom:calc(76px + env(safe-area-inset-bottom))}}
+
+
+/* Halaman penutup: dirapikan agar muat satu layar di HP */
+@media(max-width:600px){
+  #penutup{min-height:100svh;height:100svh;padding:calc(10px + env(safe-area-inset-top)) 0 calc(78px + env(safe-area-inset-bottom));overflow:hidden}
+  #penutup .wrap{padding-left:18px;padding-right:18px}
+  #penutup .landscape{width:min(72vw,290px);height:auto;max-height:18svh;margin:0 auto 5px}
+  #penutup .kicker{font-size:9px;letter-spacing:.16em}
+  #penutup h2{font-size:clamp(1.65rem,7vw,2.1rem);margin:5px 0;line-height:1}
+  #penutup .lead{font-size:clamp(10px,2.8vw,12px);line-height:1.38;margin:7px auto;max-width:520px}
+  #penutup .ornament{font-size:17px;margin:5px 0}
+  #penutup .names{font-size:1.35rem;line-height:1.1;margin:5px 0}
+  #penutup .footer-note{font-size:10px;line-height:1.35;margin:5px 0 0}
+}
+@media(max-width:380px),(max-height:680px){
+  #penutup .landscape{max-height:14svh;width:min(62vw,230px)}
+  #penutup .lead{font-size:10px;line-height:1.28;margin:5px auto}
+  #penutup .ornament{margin:3px 0}
+}
 
 </style>
 </head>
@@ -125,9 +148,9 @@
 <div class="venue-weather" id="venueWeather" aria-live="polite">
  <div class="venue-weather-location">Cuaca di lokasi acara<strong>Kediaman Mempelai Wanita · Kediri</strong></div>
  <div class="venue-weather-row">
+  <div class="venue-weather-cell venue-digital-cell"><span class="venue-weather-icon">🗓️</span><div><div class="venue-weather-title">WAKTU &amp; TANGGAL</div><div class="venue-digital-time" id="venueDigitalClock">--:--:--</div><div class="venue-digital-date" id="venueDigitalDate">Memuat tanggal…</div></div></div>
   <div class="venue-weather-cell"><span class="venue-weather-icon" id="venueDayIcon">☀️</span><div><div class="venue-weather-title" id="venueDayPart">SIANG</div><div class="venue-weather-time" id="venueLocalTime">10.40 WIB</div></div></div>
   <div class="venue-weather-cell"><span class="venue-weather-icon" id="venueWeatherIcon">☁️</span><div><div class="venue-weather-title" id="venueWeatherStatus">BERAWAN</div><div class="venue-weather-desc"><span id="venueTemperature">—°C</span> · <span id="venueRain">Peluang hujan —</span></div></div></div>
-  <div class="venue-weather-cell"><span class="venue-weather-icon">⌖</span><div><div class="venue-weather-title">LOKASI ACARA</div><div class="venue-weather-desc">Kediaman Mempelai Wanita</div></div></div>
  </div>
 </div>
 <div class="kicker">Dengan memohon rida Allah SWT</div><h2>Undangan<br>Pernikahan</h2><p class="lead">Assalamu’alaikum warahmatullahi wabarakatuh.<br><br>Dengan memohon rahmat dan rida Allah SWT, kami mengundang <strong id="personalGuestNameBody">Bapak/Ibu/Saudara/i</strong> untuk hadir serta mendoakan pernikahan kami.</p><div class="names">Bayu <span style="color:#879982">&amp;</span> Nilla</div><div class="date-pill">JUM'AT · 27 NOVEMBER 2026</div></div></section>
@@ -198,7 +221,15 @@ copyInviteLinkBtn.addEventListener('click',async()=>{if(!generatedInviteUrl)retu
     77:['BUTIRAN SALJU','🌨️'],80:['HUJAN LOKAL RINGAN','🌦️'],81:['HUJAN LOKAL','🌧️'],82:['HUJAN LOKAL LEBAT','⛈️'],
     85:['HUJAN SALJU RINGAN','🌨️'],86:['HUJAN SALJU LEBAT','🌨️'],95:['BADAI PETIR','⛈️'],96:['BADAI PETIR + HUJAN ES','⛈️'],99:['BADAI PETIR KUAT','⛈️']
   };
+  function updateDigitalCalendar(){
+    const now=new Date();
+    const time=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);
+    const date=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(now);
+    $('venueDigitalClock').textContent=time+' WIB';
+    $('venueDigitalDate').textContent=date;
+  }
   function updateLocalClock(isDayFromApi){
+    updateDigitalCalendar();
     const parts=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
     const hour=Number(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Jakarta',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
     const isDay=(isDayFromApi===0||isDayFromApi===1)?isDayFromApi===1:(hour>=6&&hour<18);
@@ -208,7 +239,7 @@ copyInviteLinkBtn.addEventListener('click',async()=>{if(!generatedInviteUrl)retu
     const mountain=$('mountainScene');
     if(mountain)mountain.classList.toggle('is-night',!isDay);
   }
-  updateLocalClock(); setInterval(()=>updateLocalClock(),30000);
+  updateLocalClock(); setInterval(()=>updateLocalClock(),1000);
   async function refreshVenueWeather(){
     try{
       const url='https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,is_day&hourly=precipitation_probability&forecast_days=1&timezone=Asia%2FJakarta';
