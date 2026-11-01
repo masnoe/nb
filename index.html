@@ -105,40 +105,24 @@
 @media(max-width:600px){.cat-home{width:76px;right:8px;bottom:calc(76px + env(safe-area-inset-bottom))}}
 
 
-/* Halaman penutup: dirapikan agar muat satu layar di HP */
+/* Halaman penutup: ukuran teks disamakan dengan halaman lain, tetap muat satu layar HP */
 @media(max-width:600px){
-  #penutup{min-height:100svh;height:100svh;padding:calc(10px + env(safe-area-inset-top)) 0 calc(78px + env(safe-area-inset-bottom));overflow:hidden}
+  #penutup{min-height:100svh;height:100svh;padding:calc(62px + env(safe-area-inset-top)) 0 calc(82px + env(safe-area-inset-bottom));overflow:hidden;display:flex;align-items:center}
   #penutup .wrap{padding-left:18px;padding-right:18px}
-  #penutup .landscape{width:min(72vw,290px);height:auto;max-height:18svh;margin:0 auto 5px}
-  #penutup .kicker{font-size:9px;letter-spacing:.16em}
-  #penutup h2{font-size:clamp(1.65rem,7vw,2.1rem);margin:5px 0;line-height:1}
-  #penutup .lead{font-size:clamp(10px,2.8vw,12px);line-height:1.38;margin:7px auto;max-width:520px}
-  #penutup .ornament{font-size:17px;margin:5px 0}
-  #penutup .names{font-size:1.35rem;line-height:1.1;margin:5px 0}
-  #penutup .footer-note{font-size:10px;line-height:1.35;margin:5px 0 0}
+  #penutup .content{width:100%}
+  #penutup .landscape{width:min(88vw,460px);height:auto;max-height:23svh;margin:0 auto 8px}
+  #penutup .kicker{font-size:10px;letter-spacing:.20em}
+  #penutup h2{font-size:clamp(2.2rem,6vw,2.7rem);margin:8px 0;line-height:1.04}
+  #penutup .lead{font-size:clamp(14px,3.8vw,16px);line-height:1.48;margin:9px auto;max-width:560px}
+  #penutup .ornament{font-size:22px;margin:9px 0}
+  #penutup .names{font-size:clamp(1.5rem,4vw,1.8rem);line-height:1.2;margin:8px 0}
+  #penutup .footer-note{font-size:13px;line-height:1.45;margin:7px 0 0}
 }
 @media(max-width:380px),(max-height:680px){
-  #penutup .landscape{max-height:14svh;width:min(62vw,230px)}
-  #penutup .lead{font-size:10px;line-height:1.28;margin:5px auto}
-  #penutup .ornament{margin:3px 0}
-}
-
-
-/* Garis pemisah kartu cuaca: satu tinggi dan sejajar persis */
-.venue-weather-row{
-  position:relative;
-  background-image:linear-gradient(#9eae9c,#9eae9c),linear-gradient(#9eae9c,#9eae9c);
-  background-repeat:no-repeat;
-  background-size:1px 52px,1px 52px;
-  background-position:38.03% 50%,66.20% 50%;
-}
-.venue-weather-cell+.venue-weather-cell{border-left:0!important}
-.venue-weather-cell+.venue-weather-cell::before{content:none!important;display:none!important}
-@media(max-width:600px){
-  .venue-weather-row{background-position:38.26% 50%,65.80% 50%;background-size:1px 48px,1px 48px}
-}
-@media(max-width:370px){
-  .venue-weather-row{background-position:38.20% 50%,65.67% 50%;background-size:1px 44px,1px 44px}
+  #penutup{padding-top:58px;padding-bottom:78px}
+  #penutup .landscape{max-height:19svh;width:min(84vw,400px)}
+  #penutup .lead{font-size:13px;line-height:1.4;margin:7px auto}
+  #penutup .ornament{margin:6px 0}
 }
 
 </style>
