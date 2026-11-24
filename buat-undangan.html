@@ -4,6 +4,18 @@
 const input=document.getElementById('guest'),preview=document.getElementById('preview'),error=document.getElementById('error'),result=document.getElementById('result'),urlBox=document.getElementById('url'),share=document.getElementById('share');let currentUrl='';
 input.addEventListener('input',()=>{preview.textContent=input.value.trim()||'Nama Tamu Undangan';error.style.display='none'});
 function baseInviteUrl(){const u=new URL('./',window.location.href);u.search='';u.hash='';return u.href}
-document.getElementById('generate').addEventListener('click',()=>{const name=input.value.trim();if(!name){error.style.display='block';input.focus();return}currentUrl=baseInviteUrl()+'?to='+encodeURIComponent(name);urlBox.textContent=currentUrl;share.href='https://wa.me/?text='+encodeURIComponent('Assalamu’alaikum, berikut undangan pernikahan Bayu & Nilla untuk '+name+': '+currentUrl);result.hidden=false});
+document.getElementById('generate').addEventListener('click',()=>{const name=input.value.trim();if(!name){error.style.display='block';input.focus();return}currentUrl=baseInviteUrl()+'?to='+encodeURIComponent(name);urlBox.textContent=currentUrl;const message=`Assalamu’alaikum, ${name}.
+
+Dengan penuh rasa bahagia, kami ingin mengundang ${name} untuk hadir di hari istimewa pernikahan kami.
+
+Besar harapan kami ${name} berkenan hadir dan turut memberikan doa restu bagi perjalanan baru kami.
+
+Undangan lengkapnya dapat dibuka melalui tautan berikut:
+💍 ${currentUrl}
+
+Terima kasih atas doa dan kebaikannya. Semoga kita bisa bertemu di hari bahagia tersebut.
+
+Salam hangat,
+Bayu & Nilla 🤍`;share.href='https://wa.me/?text='+encodeURIComponent(message);result.hidden=false});
 document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(currentUrl);document.getElementById('copy').textContent='Tautan berhasil disalin ✓'}catch(e){const range=document.createRange();range.selectNodeContents(urlBox);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);alert('Salin tautan yang ditampilkan di layar.')}});
 </script></body></html>
